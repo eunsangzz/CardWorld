@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Random;
 
 public class CardManager : MonoBehaviour
 {
@@ -16,5 +17,24 @@ public class CardManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void CardBuy()//카드 살때
+    {
+        if(DataController.instance.gameData.storeUpgrade == 0)//업그레이드 없음
+        {
+            int rand = Random.range(0,4);
+            DataController.instance.gameData.card[rand].setActive(ture); //카드 랜덤생성
+        }
+        if(DataController.instance.gameData.storeUpgrade == 1)// 상점 업그레이드 1단계
+        {
+            int rand = Random.range(0,10);
+            DataController.instance.gameData.card[rand].setActive(ture); //카드 랜덤생성
+        }
+    }
+
+    public void CardCraft()//무엇을 조합합할지 알아야함 필요한 카드와 수량 조절필요
+    {
+
     }
 }
