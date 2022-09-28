@@ -16,4 +16,9 @@ public class UImanager : MonoBehaviour
     {
         menuUi.SetActive(true);
     }
+
+    public void BuyBtn()
+    {
+        
+    }
 }

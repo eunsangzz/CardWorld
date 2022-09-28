@@ -12,4 +12,5 @@ public class GameData
     public int WoodCard;
     public int StoneCard;
     public int IronCard;
+    public GameObject[] Card;
 }
