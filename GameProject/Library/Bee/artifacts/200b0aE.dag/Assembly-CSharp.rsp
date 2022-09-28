@@ -372,6 +372,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/DataController.cs"
 "Assets/Script/GameData.cs"
+"Assets/Script/GameManager.cs"
 "Assets/Script/MouseDrag.cs"
 "Assets/Script/UImanager.cs"
 -langversion:9.0
