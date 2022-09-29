@@ -555,9 +555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4df1d311b0f24e65a96c768d8697242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardSet:
-  - {fileID: 2683548558265663452, guid: e29b020d9645b494a97e90fbfe1cace5, type: 3}
-  - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf034e9e839c487ab87463936082900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BasicCardSet:
+  - {fileID: 2683548558265663452, guid: e29b020d9645b494a97e90fbfe1cace5, type: 3}
+  - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
 --- !u!1 &1399804542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,13 +1202,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420028}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: CardManager, Assembly-CSharp
+        m_MethodName: CardBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
