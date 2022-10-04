@@ -8,16 +8,19 @@ public class UImanager : MonoBehaviour
     public GameObject craftUiBtn;
     public GameObject menuUi;
     public GameObject menuUiBtn;
+    public GameObject buyBtn;
  
     public void CraftUiBtn()
     {
         craftUi.SetActive(true);
         craftUiBtn.SetActive(false);
+        buyBtn.SetActive(false);
     }
     public void CraftUiCloseBtn()
     {
         craftUi.SetActive(false);
         craftUiBtn.SetActive(true);
+        buyBtn.SetActive(true);
     }
 
     public void MenuUiBtn()

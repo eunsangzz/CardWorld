@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.storeUpgrade =0; //나중에 삭제
         DataController.instance.gameData.WoodCard = 0;
         DataController.instance.gameData.StoneCard = 0;
+        DataController.instance.gameData.HouseCard = 0;
     }
 
     // Update is called once per frame
