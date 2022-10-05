@@ -13,12 +13,18 @@ public class CardManager : MonoBehaviour
         if(DataController.instance.gameData.storeUpgrade == 0)//업그레이드 없음
         {
             int rand = Random.Range(0,2);
-            int randPos = Random.Range(-4, 4);
-            GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPos, randPos, 0), Quaternion.identity);
+            float randPosX = Random.Range(-5, 5);
+            float randPosY = Random.Range(-4, 4);
+            GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
             DataController.instance.gameData.BasicCardList.Add(_Card);
             if (rand == 0) DataController.instance.gameData.WoodCard += 1;
             if (rand == 1) DataController.instance.gameData.StoneCard += 1;
         }
+    }
+
+    public void ClearCard()
+    {
+        DataController.instance.gameData.BasicCardList.Remove();
     }
 
     public void CardCraft()//무엇을 조합합할지 알아야함 필요한 카드와 수량 조절필요

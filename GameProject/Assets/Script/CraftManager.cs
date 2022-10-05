@@ -17,13 +17,11 @@ public class CraftManager : MonoBehaviour
             if (DataController.instance.gameData.WoodCard >= 2 &&
                 DataController.instance.gameData.StoneCard >= 1)
             {
-                //Ä«µå ·£´ý »ý¼º
-                int rand = Random.Range(0, 2);
-                int randPos = Random.Range(-4, 4);
-                GameObject _Card = Instantiate(CraftCardSet[rand], new Vector3(randPos, randPos, 0), Quaternion.identity);
-                //Á¶ÇÕÄ«µå list¿¡ ÀúÀå
+                float randPosX = Random.Range(-5, 5);
+                float randPosY = Random.Range(-4, 4);
+                GameObject _Card = Instantiate(CraftCardSet[1], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
+                //ï¿½ï¿½ï¿½ï¿½Ä«ï¿½ï¿½ listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 DataController.instance.gameData.CraftCardList.Add(_Card);
-                //ÀúÀåµÈ Ä«µåÁß Á¶ÇÕÄ«µå
                 for (int i = 0; i < 2; i++)
                 {
                     GameObject _del1Card = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
