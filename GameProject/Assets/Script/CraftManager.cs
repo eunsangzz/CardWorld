@@ -14,7 +14,7 @@ public class CraftManager : MonoBehaviour
 
         if(clickObject.name == "HouseCraft")
         {
-            if (DataController.instance.gameData.WoodCard >= 2 &&
+            if (DataController.instance.gameData.WoodCard >= 2 && 
                 DataController.instance.gameData.StoneCard >= 1)
             {
                 float randPosX = Random.Range(-5, 5);
