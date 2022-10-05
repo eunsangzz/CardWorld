@@ -24,6 +24,5 @@ public class CardManager : MonoBehaviour
 
     public void ClearCard()
     {
-        
     }
 }
