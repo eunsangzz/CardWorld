@@ -24,12 +24,6 @@ public class CardManager : MonoBehaviour
 
     public void ClearCard()
     {
-        Instantiate(BasicCardSet[1], new Vector3(3, 3, 0), Quaternion.identity);   
         
-    }
-
-    public void CardCraft()//무엇을 조합합할지 알아야함 필요한 카드와 수량 조절필요
-    {
-
     }
 }
