@@ -11,21 +11,7 @@ public class CardManager : MonoBehaviour
 
     private void Update()
     {
-        /*if(Input.GetMouseButton(0))
-        {
-            Debug.Log("1");
-            if (DataController.instance.gameData.Sell == true)
-            {
-                Vector2 Pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hitInfo = Physics2D.Raycast(Pos, Camera.main.transform.forward);
-                if (hitInfo.collider != null)
-                {
-                    Debug.Log("1");
-                    GameObject touch = hitInfo.transform.gameObject;
-                    Destroy(touch);
-                }
-            }
-        }*/
+        SellCard();
     }
 
     public void CardBuy()//카드 살때
@@ -46,7 +32,7 @@ public class CardManager : MonoBehaviour
     {
     }
 
-    public void SellCard()
+    public void SellActive()
     {
         if (DataController.instance.gameData.Sell == false)
         {
@@ -55,6 +41,25 @@ public class CardManager : MonoBehaviour
         else if(DataController.instance.gameData.Sell == true)
         {
             DataController.instance.gameData.Sell = false;
+        }
+    }
+
+    void SellCard()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (DataController.instance.gameData.Sell == true)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("1");
+                    GameObject touch = hit.transform.gameObject;
+                    Destroy(touch);
+                }
+            }
         }
     }
 }
