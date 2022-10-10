@@ -23,13 +23,18 @@ public class CraftManager : MonoBehaviour
                 GameObject _Card = Instantiate(CraftCardSet[1], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
                 DataController.instance.gameData.CraftCardList.Add(_Card);
 
-                for (int i = 0; i < 2; i++)
-                {
-                    GameObject _delWoodCard = GameObject.Find("Wood(Clone)");
-                    Destroy(_delWoodCard);
-                    GameObject _del1Card = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                    DataController.instance.gameData.BasicCardList.Remove(_del1Card);
-                }
+                //Áú¹®
+                GameObject _delWoodCard1 = GameObject.Find("Wood(Clone)");
+                Destroy(_delWoodCard1);
+
+                GameObject _delWoodCard2 = GameObject.Find("Wood(Clone)");
+                Destroy(_delWoodCard2);
+
+                GameObject _del1Card1 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
+                DataController.instance.gameData.BasicCardList.Remove(_del1Card1);
+                GameObject _del1Card2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
+                DataController.instance.gameData.BasicCardList.Remove(_del1Card2);
+
                 GameObject _delStoneCard = GameObject.Find("Stone(Clone)");
                 Destroy(_delStoneCard);
                 GameObject _del2Card = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Stone(Clone)");
