@@ -9,7 +9,16 @@ public class UImanager : MonoBehaviour
     public GameObject menuUi;
     public GameObject menuUiBtn;
     public GameObject buyBtn;
- 
+    public GameObject SellUi;
+
+    private void Update()
+    {
+        if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
+        else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
+    }
+
+
+
     public void CraftUiBtn()
     {
         craftUi.SetActive(true);

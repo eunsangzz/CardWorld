@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MouseDrag : MonoBehaviour //이름 변경생각
 {
+    public Camera getCamera;
+
+    private RaycastHit hit;
+
     float distance = 10.0f;
     public GameObject CardShadow;
 

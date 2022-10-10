@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.WoodCard = 0;
         DataController.instance.gameData.StoneCard = 0;
         DataController.instance.gameData.HouseCard = 0;
+
+        DataController.instance.gameData.Sell = false;
     }
 
     // Update is called once per frame

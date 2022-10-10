@@ -5,9 +5,29 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
     public GameObject[] BasicCardSet = new GameObject[2];
+    public GameObject SellUI;
     //카드 구매버튼 눌렀을때 저장해둔 프리팹중에 랜덤으로 하나 생성 
     //구매 버튼 업그레이드 적용해서 1단계 나무 돌 2단계 철 금 등등 으로 세팅
-    
+
+    private void Update()
+    {
+        /*if(Input.GetMouseButton(0))
+        {
+            Debug.Log("1");
+            if (DataController.instance.gameData.Sell == true)
+            {
+                Vector2 Pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hitInfo = Physics2D.Raycast(Pos, Camera.main.transform.forward);
+                if (hitInfo.collider != null)
+                {
+                    Debug.Log("1");
+                    GameObject touch = hitInfo.transform.gameObject;
+                    Destroy(touch);
+                }
+            }
+        }*/
+    }
+
     public void CardBuy()//카드 살때
     {
         if(DataController.instance.gameData.storeUpgrade == 0)//업그레이드 없음
@@ -24,5 +44,17 @@ public class CardManager : MonoBehaviour
 
     public void ClearCard()
     {
+    }
+
+    public void SellCard()
+    {
+        if (DataController.instance.gameData.Sell == false)
+        {
+            DataController.instance.gameData.Sell = true;
+        }
+        else if(DataController.instance.gameData.Sell == true)
+        {
+            DataController.instance.gameData.Sell = false;
+        }
     }
 }
