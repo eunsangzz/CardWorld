@@ -16,6 +16,7 @@ public class CardManager : MonoBehaviour
 
     public void CardBuy()//카드 살때
     {
+        Debug.Log("1");
         if(DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
         {
             int rand = Random.Range(0,2);
@@ -26,6 +27,7 @@ public class CardManager : MonoBehaviour
             if (rand == 0) DataController.instance.gameData.WoodCard += 1;
             if (rand == 1) DataController.instance.gameData.StoneCard += 1;
             if (rand == 2) DataController.instance.gameData.BananaTreeCard += 1;
+            DataController.instance.gameData.gold -= 3;
         }
 
         /*if(DataController.instance.gameData.storeUpgrade == 1 && DataController.instance.gameData.gold >= 3)
@@ -42,10 +44,6 @@ public class CardManager : MonoBehaviour
         }*/
     }
 
-    public void ClearCard()
-    {
-    }
-
     public void SellActive()
     {
         if (DataController.instance.gameData.Sell == false)
@@ -58,7 +56,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    void SellCard()
+    private void SellCard()
     {
         if (Input.GetMouseButton(0))
         {
@@ -71,8 +69,25 @@ public class CardManager : MonoBehaviour
                 {
                     GameObject touch = hit.transform.gameObject;
                     Destroy(touch);
+                    if (touch.name == "Wood(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 2;
+                    }
+                    if (touch.name == "Stone(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 2;
+                    }
+                    if (touch.name == "Housh(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 3;
+                    }
                 }
             }
         }
+    }
+
+    public void CardSkill()
+    {
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UImanager : MonoBehaviour
 {
@@ -14,10 +15,13 @@ public class UImanager : MonoBehaviour
     public GameObject SellUi;
     public GameObject SellBtn;
     public GameObject CardInfoUi;
+    public GameObject CardSkillUi;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
     public TextMeshProUGUI IronCountText;
+
+    public TextMeshProUGUI GoldText;
 
     public TextMeshProUGUI CardInfoText;
     public TextMeshProUGUI CardNameText;
@@ -27,7 +31,7 @@ public class UImanager : MonoBehaviour
     {
     }
 
-    void Update()
+    private void Update()
     {
         if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
         else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
@@ -44,6 +48,8 @@ public class UImanager : MonoBehaviour
             buyBtn.SetActive(true);
             craftUiBtn.SetActive(true);
         }
+
+        CardInfo();
     }
 
     public void CraftUiBtn()
@@ -68,7 +74,38 @@ public class UImanager : MonoBehaviour
         menuUi.SetActive(false);
         menuUiBtn.SetActive(true);
     }
-    public void CardInfo()
+    private void CardInfo()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (DataController.instance.gameData.Sell == false)
+            {
+                CardInfoUi.SetActive(false);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    GameObject touch = hit.transform.gameObject;
+
+                    if (touch.name == "Wood(Clone)")
+                    {
+                        CardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Wood";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "woodinfo";
+                    }
+                    else if (touch.name == "Stone(Clone)")
+                    {
+                        CardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Stone";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "stoneinfo";
+                    }
+                }
+            }
+        }
+    }
+
+    private void CardSkillUI()
     {
         if (Input.GetMouseButton(0))
         {
@@ -81,17 +118,16 @@ public class UImanager : MonoBehaviour
                 {
                     GameObject touch = hit.transform.gameObject;
 
-                    if(touch.name =="Wood(Clone)")
+                    if(touch.name == "Tree(Clone)")
                     {
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Wood";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "woodinfo";
+                        CardSkillUi.SetActive(true);
                     }
                 }
             }
         }
     }
 
-    void StoreUpgrade()
+    public void StoreUpgrade()
     {
         if(DataController.instance.gameData.gold >= 100 && DataController.instance.gameData.storeUpgrade ==0)
         {
@@ -108,9 +144,10 @@ public class UImanager : MonoBehaviour
 
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " +DataController.instance.gameData.WoodCard;
         StoneCountText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
+        GoldText.GetComponent<TextMeshProUGUI>().text = "Gold : " + DataController.instance.gameData.gold;
     }
 }
