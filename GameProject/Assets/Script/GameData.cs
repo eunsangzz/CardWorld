@@ -16,6 +16,7 @@ public class GameData
     public int TreeCard;
     public int BananaTreeCard;
     public int HouseCard;
+    public int gold;
 
     public bool Sell;
 

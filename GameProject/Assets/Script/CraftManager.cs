@@ -27,18 +27,20 @@ public class CraftManager : MonoBehaviour
                 GameObject _delWoodCard1 = GameObject.Find("Wood(Clone)");
                 Destroy(_delWoodCard1);
 
-                GameObject _delWoodCard2 = GameObject.Find("Wood(Clone)");
-                Destroy(_delWoodCard2);
-
-                GameObject _del1Card1 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                DataController.instance.gameData.BasicCardList.Remove(_del1Card1);
-                GameObject _del1Card2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                DataController.instance.gameData.BasicCardList.Remove(_del1Card2);
+                GameObject _delCard1 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
+                DataController.instance.gameData.BasicCardList.Remove(_delCard1);
 
                 GameObject _delStoneCard = GameObject.Find("Stone(Clone)");
                 Destroy(_delStoneCard);
-                GameObject _del2Card = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Stone(Clone)");
-                DataController.instance.gameData.BasicCardList.Remove(_del2Card);
+
+                GameObject _delCard = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Stone(Clone)");
+                DataController.instance.gameData.BasicCardList.Remove(_delCard);
+
+                GameObject _delWoodCard2 = GameObject.Find("Wood(Clone)");
+                Destroy(_delWoodCard2);
+
+                GameObject _delCard2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
+                DataController.instance.gameData.BasicCardList.Remove(_delCard2);
 
                 DataController.instance.gameData.WoodCard -= 2;
                 DataController.instance.gameData.StoneCard -= 1;

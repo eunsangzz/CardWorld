@@ -13,10 +13,15 @@ public class UImanager : MonoBehaviour
     public GameObject buyBtn;
     public GameObject SellUi;
     public GameObject SellBtn;
+    public GameObject CardInfoUi;
 
-    public TextMeshProUGUI WoodCardText;
-    public TextMeshProUGUI StoneCardText;
-    public TextMeshProUGUI IronCardText;
+    public TextMeshProUGUI WoodCountText;
+    public TextMeshProUGUI StoneCountText;
+    public TextMeshProUGUI IronCountText;
+
+    public TextMeshProUGUI CardInfoText;
+    public TextMeshProUGUI CardNameText;
+
 
     private void Start()
     {
@@ -63,10 +68,49 @@ public class UImanager : MonoBehaviour
         menuUi.SetActive(false);
         menuUiBtn.SetActive(true);
     }
+    public void CardInfo()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (DataController.instance.gameData.Sell == false)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    GameObject touch = hit.transform.gameObject;
+
+                    if(touch.name =="Wood(Clone)")
+                    {
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Wood";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "woodinfo";
+                    }
+                }
+            }
+        }
+    }
+
+    void StoreUpgrade()
+    {
+        if(DataController.instance.gameData.gold >= 100 && DataController.instance.gameData.storeUpgrade ==0)
+        {
+            DataController.instance.gameData.storeUpgrade += 1;
+        }
+        if (DataController.instance.gameData.gold >= 300 && DataController.instance.gameData.storeUpgrade == 1)
+        {
+            DataController.instance.gameData.storeUpgrade += 1;
+        }
+        if (DataController.instance.gameData.gold >= 500 && DataController.instance.gameData.storeUpgrade == 2)
+        {
+            DataController.instance.gameData.storeUpgrade += 1;
+        }
+
+    }
 
     void LateUpdate()
     {
-        WoodCardText.GetComponent<TextMeshProUGUI>().text = "Wood : " +DataController.instance.gameData.WoodCard;
-        StoneCardText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
+        WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " +DataController.instance.gameData.WoodCard;
+        StoneCountText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
     }
 }
