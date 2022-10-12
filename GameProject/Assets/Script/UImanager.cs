@@ -16,6 +16,9 @@ public class UImanager : MonoBehaviour
     public GameObject SellBtn;
     public GameObject CardInfoUi;
     public GameObject CardSkillUi;
+    public GameObject TreeSkillBtn;
+    public GameObject RockSkillBtn;
+    public GameObject BananaTreeBtn;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
@@ -25,6 +28,7 @@ public class UImanager : MonoBehaviour
 
     public TextMeshProUGUI CardInfoText;
     public TextMeshProUGUI CardNameText;
+    public TextMeshProUGUI CardCountText;
 
 
     private void Start()
@@ -49,7 +53,13 @@ public class UImanager : MonoBehaviour
             craftUiBtn.SetActive(true);
         }
 
+        if(DataController.instance.gameData.Skill == false)
+        {
+            CardSkillUi.SetActive(false);
+        }
+
         CardInfo();
+        CardSkillUI();
     }
 
     public void CraftUiBtn()
@@ -100,6 +110,24 @@ public class UImanager : MonoBehaviour
                         CardNameText.GetComponent<TextMeshProUGUI>().text = "Stone";
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "stoneinfo";
                     }
+                    else if (touch.name == "Tree(Clone)")
+                    {
+                        CardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Tree";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "treeinfo";
+                    }
+                    else if (touch.name == "Rock(Clone)")
+                    {
+                        CardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Rock";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "rockinfo";
+                    }
+                    else if (touch.name == "House(Clone)")
+                    {
+                        CardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "House";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "houseinfo";
+                    }
                 }
             }
         }
@@ -121,6 +149,26 @@ public class UImanager : MonoBehaviour
                     if(touch.name == "Tree(Clone)")
                     {
                         CardSkillUi.SetActive(true);
+                        TreeSkillBtn.SetActive(true);
+                        RockSkillBtn.SetActive(false);
+                        BananaTreeBtn.SetActive(false);
+                        DataController.instance.gameData.Skill = true;
+                    }
+                    else if (touch.name == "Rock(Clone)")
+                    {
+                        CardSkillUi.SetActive(true);
+                        RockSkillBtn.SetActive(true);
+                        TreeSkillBtn.SetActive(false);
+                        BananaTreeBtn.SetActive(false);
+                        DataController.instance.gameData.Skill = true;
+                    }
+                    else if (touch.name == "BananaTree(Clone)")
+                    {
+                        CardSkillUi.SetActive(true);
+                        BananaTreeBtn.SetActive(true);
+                        RockSkillBtn.SetActive(false);
+                        TreeSkillBtn.SetActive(false);
+                        DataController.instance.gameData.Skill = true;
                     }
                 }
             }
@@ -149,5 +197,6 @@ public class UImanager : MonoBehaviour
         WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " +DataController.instance.gameData.WoodCard;
         StoneCountText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
         GoldText.GetComponent<TextMeshProUGUI>().text = "Gold : " + DataController.instance.gameData.gold;
+        CardCountText.GetComponent<TextMeshProUGUI>().text = "CardCount : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
     }
 }

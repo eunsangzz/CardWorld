@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9ece9ed326cc5469ed437fac6e82e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getCamera: {fileID: 0}
   CardShadow: {fileID: 691790214543041592}
 --- !u!1 &5317336453277116269
 GameObject:
@@ -242,4 +243,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9ece9ed326cc5469ed437fac6e82e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getCamera: {fileID: 0}
   CardShadow: {fileID: 691790214543041592}

@@ -23,28 +23,26 @@ public class CraftManager : MonoBehaviour
                 GameObject _Card = Instantiate(CraftCardSet[1], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
                 DataController.instance.gameData.CraftCardList.Add(_Card);
 
-                //Áú¹®
+                //ï¿½ï¿½ï¿½ï¿½
                 GameObject _delWoodCard1 = GameObject.Find("Wood(Clone)");
                 Destroy(_delWoodCard1);
 
-                GameObject _delCard1 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                DataController.instance.gameData.BasicCardList.Remove(_delCard1);
+                //GameObject _delCard1 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
+                //DataController.instance.gameData.BasicCardList.Remove(_delCard1);
 
                 GameObject _delStoneCard = GameObject.Find("Stone(Clone)");
                 Destroy(_delStoneCard);
 
-                GameObject _delCard = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Stone(Clone)");
-                DataController.instance.gameData.BasicCardList.Remove(_delCard);
+                //GameObject _delWoodCard2 = GameObject.Find("Wood(Clone)");
+                //Destroy(_delWoodCard2);
 
-                GameObject _delWoodCard2 = GameObject.Find("Wood(Clone)");
-                Destroy(_delWoodCard2);
-
-                GameObject _delCard2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                DataController.instance.gameData.BasicCardList.Remove(_delCard2);
+                //GameObject _delCard2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
+                //DataController.instance.gameData.BasicCardList.Remove(_delCard2);
 
                 DataController.instance.gameData.WoodCard -= 2;
                 DataController.instance.gameData.StoneCard -= 1;
                 DataController.instance.gameData.HouseCard += 1;
+                DataController.instance.gameData.CardLimit += 3;
 
                 CraftUI.SetActive(false);
             }
