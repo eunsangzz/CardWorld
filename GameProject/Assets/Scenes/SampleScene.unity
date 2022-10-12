@@ -1587,6 +1587,9 @@ MonoBehaviour:
   BasicCardSet:
   - {fileID: 2683548558265663452, guid: e29b020d9645b494a97e90fbfe1cace5, type: 3}
   - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
+  - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
+  - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
+  - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
   SellUI: {fileID: 413550840}
 --- !u!114 &519420036
 MonoBehaviour:
