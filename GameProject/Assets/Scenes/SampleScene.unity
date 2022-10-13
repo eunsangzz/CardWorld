@@ -1937,6 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf034e9e839c487ab87463936082900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCard: {fileID: 2683548558265663452, guid: 344864104d1394ef1a30b6a56f64e1ca, type: 3}
   BasicCardSet:
   - {fileID: 2683548558265663452, guid: d5761f25dac704faf82d39bf26b12b00, type: 3}
   - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}

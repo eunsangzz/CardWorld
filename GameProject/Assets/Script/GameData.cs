@@ -21,8 +21,9 @@ public class GameData
     public int RockCard;
 
     public int CardCount;
-
     public int CardLimit;
+    public int PlayerCount;
+
 
     public bool Sell;
     public bool Skill;

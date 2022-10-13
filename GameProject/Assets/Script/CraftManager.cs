@@ -39,7 +39,7 @@ public class CraftManager : MonoBehaviour
                 //GameObject _delCard2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
                 //DataController.instance.gameData.BasicCardList.Remove(_delCard2);
 
-                DataController.instance.gameData.WoodCard -= 2;
+                DataController.instance.gameData.WoodCard -= 1;
                 DataController.instance.gameData.StoneCard -= 1;
                 DataController.instance.gameData.HouseCard += 1;
                 DataController.instance.gameData.CardLimit += 3;

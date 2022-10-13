@@ -5,10 +5,16 @@ using UnityEngine.EventSystems;
 
 public class CardManager : MonoBehaviour
 {
+    public GameObject PlayerCard;
     public GameObject[] BasicCardSet = new GameObject[6];
     public GameObject SellUI;
     //카드 구매버튼 눌렀을때 저장해둔 프리팹중에 랜덤으로 하나 생성 
     //구매 버튼 업그레이드 적용해서 1단계 나무 돌 2단계 철 금 등등 으로 세팅
+
+    private void Start()
+    {
+        GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
+    }
 
     private void Update()
     {
@@ -66,14 +72,17 @@ public class CardManager : MonoBehaviour
                     if (touch.name == "Wood(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
+                        DataController.instance.gameData.WoodCard -=1;
                     }
                     if (touch.name == "Stone(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
+                        DataController.instance.gameData.StoneCard -=1;
                     }
                     if (touch.name == "Housh(Clone)")
                     {
                         DataController.instance.gameData.gold += 3;
+                        DataController.instance.gameData.HouseCard -=1;
                     }
                 }
             }

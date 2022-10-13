@@ -31,7 +31,7 @@ public class DataController : MonoBehaviour
             return _instance;
         }
     }
-    public string GameDataFileName = "TowerdefenseSave.json";
+    public string GameDataFileName = "CardWorldSave.json";
     public GameData _gameData;
 
     public GameData gameData

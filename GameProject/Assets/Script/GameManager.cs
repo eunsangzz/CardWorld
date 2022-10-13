@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.gold = 100;
         DataController.instance.gameData.CardLimit =15;
         DataController.instance.gameData.CardCount = 0;
+        DataController.instance.gameData.PlayerCount = 1;
 
         DataController.instance.gameData.Sell = false;
         DataController.instance.gameData.Skill = false;
