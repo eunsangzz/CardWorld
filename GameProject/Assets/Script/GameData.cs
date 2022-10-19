@@ -23,6 +23,8 @@ public class GameData
     public int CardCount;
     public int CardLimit;
     public int PlayerCount;
+    public bool endDay;
+    public int Day;
 
 
     public bool Sell;

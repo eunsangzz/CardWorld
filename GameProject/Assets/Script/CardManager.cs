@@ -23,25 +23,22 @@ public class CardManager : MonoBehaviour
 
     public void CardBuy()//카드 살때
     {
-        if(DataController.instance.gameData.CardLimit >= DataController.instance.gameData.CardCount)
+        if (DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
         {
-            if(DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
-            {
-                int rand = Random.Range(0,5);
-                float randPosX = Random.Range(-5, 5);
-                float randPosY = Random.Range(-4, 4);
-                GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
-                DataController.instance.gameData.BasicCardList.Add(_Card);
-                if (rand == 0) DataController.instance.gameData.WoodCard += 1;
-                if (rand == 1) DataController.instance.gameData.StoneCard += 1;
-                if (rand == 2) DataController.instance.gameData.TreeCard += 1;
-                if (rand == 3) DataController.instance.gameData.RockCard += 1;
-                if (rand == 4) DataController.instance.gameData.BananaTreeCard += 1;
-                if (rand == 5) DataController.instance.gameData.BananaCard += 1;
-                DataController.instance.gameData.gold -= 3;
-            }
+            int rand = Random.Range(0, 5);
+            float randPosX = Random.Range(-5, 5);
+            float randPosY = Random.Range(-4, 4);
+            GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
+            DataController.instance.gameData.BasicCardList.Add(_Card);
+            if (rand == 0) DataController.instance.gameData.WoodCard += 1;
+            if (rand == 1) DataController.instance.gameData.StoneCard += 1;
+            if (rand == 2) DataController.instance.gameData.TreeCard += 1;
+            if (rand == 3) DataController.instance.gameData.RockCard += 1;
+            if (rand == 4) DataController.instance.gameData.BananaTreeCard += 1;
+            if (rand == 5) DataController.instance.gameData.BananaCard += 1;
+            DataController.instance.gameData.gold -= 3;
         }
-        
+
     }
 
     public void SellActive()
@@ -50,9 +47,17 @@ public class CardManager : MonoBehaviour
         {
             DataController.instance.gameData.Sell = true;
         }
-        else if(DataController.instance.gameData.Sell == true)
+        else if (DataController.instance.gameData.Sell == true)
         {
             DataController.instance.gameData.Sell = false;
+        }
+    }
+
+    public void endDaySellCard()
+    {
+        if (DataController.instance.gameData.endDay == true)
+        {
+            DataController.instance.gameData.Sell = true;
         }
     }
 
@@ -72,17 +77,37 @@ public class CardManager : MonoBehaviour
                     if (touch.name == "Wood(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
-                        DataController.instance.gameData.WoodCard -=1;
+                        DataController.instance.gameData.WoodCard -= 1;
                     }
                     if (touch.name == "Stone(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
-                        DataController.instance.gameData.StoneCard -=1;
+                        DataController.instance.gameData.StoneCard -= 1;
+                    }
+                    if( touch.name == "Tree(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 2;
+                        DataController.instance.gameData.TreeCard -= 1;
+                    }
+                    if( touch.name == "Rock(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 2;
+                        DataController.instance.gameData.RockCard -= 1;
+                    }
+                    if( touch.name == "BananaTree(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 2;
+                        DataController.instance.gameData.BananaTreeCard -= 1;
+                    }
+                    if( touch.name == "Banana(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 1;
+                        DataController.instance.gameData.BananaCard -= 1;
                     }
                     if (touch.name == "Housh(Clone)")
                     {
                         DataController.instance.gameData.gold += 3;
-                        DataController.instance.gameData.HouseCard -=1;
+                        DataController.instance.gameData.HouseCard -= 1;
                     }
                 }
             }
@@ -93,9 +118,9 @@ public class CardManager : MonoBehaviour
     {
         string Btn = EventSystem.current.currentSelectedGameObject.name;
 
-        if(Btn == "Tree")
+        if (Btn == "Tree")
         {
-            for (int i = 0; i < 2; i++) 
+            for (int i = 0; i < 2; i++)
             {
                 float randPosX = Random.Range(-5, 5);
                 float randPosY = Random.Range(-4, 4);
@@ -105,12 +130,12 @@ public class CardManager : MonoBehaviour
             GameObject _delTreeCard1 = GameObject.Find("Tree(Clone)");
             Destroy(_delTreeCard1);
 
-            DataController.instance.gameData.WoodCard +=2;
-            DataController.instance.gameData.TreeCard -=1;
-            DataController.instance.gameData.Skill =false;
+            DataController.instance.gameData.WoodCard += 2;
+            DataController.instance.gameData.TreeCard -= 1;
+            DataController.instance.gameData.Skill = false;
         }
 
-        if(Btn == "Rock")
+        if (Btn == "Rock")
         {
             for (int i = 0; i < 2; i++)
             {
@@ -122,14 +147,14 @@ public class CardManager : MonoBehaviour
             GameObject _delRockCard1 = GameObject.Find("Rock(Clone)");
             Destroy(_delRockCard1);
 
-            DataController.instance.gameData.StoneCard +=2;
-            DataController.instance.gameData.RockCard -=1;
+            DataController.instance.gameData.StoneCard += 2;
+            DataController.instance.gameData.RockCard -= 1;
             DataController.instance.gameData.Skill = false;
         }
 
-        if(Btn == "BananaTree")
+        if (Btn == "BananaTree")
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 float randPosX = Random.Range(-5, 5);
                 float randPosY = Random.Range(-4, 4);
@@ -138,8 +163,8 @@ public class CardManager : MonoBehaviour
             GameObject _delRockCard1 = GameObject.Find("BananaTree(Clone)");
             Destroy(_delRockCard1);
 
-            DataController.instance.gameData.BananaCard +=2;
-            DataController.instance.gameData.BananaTreeCard -=1;
+            DataController.instance.gameData.BananaCard += 3;
+            DataController.instance.gameData.BananaTreeCard -= 1;
             DataController.instance.gameData.Skill = false;
         }
     }

@@ -29,6 +29,10 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI CardInfoText;
     public TextMeshProUGUI CardNameText;
     public TextMeshProUGUI CardCountText;
+    public TextMeshProUGUI CardOver;
+
+    public Slider slTimer;
+    float fSliderBarTime;
 
 
     private void Start()
@@ -37,29 +41,57 @@ public class UImanager : MonoBehaviour
 
     private void Update()
     {
-        if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
-        else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
-
-        if(craftUi.activeSelf == true)
+        if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false)
         {
-            SellBtn.SetActive(false);
-            buyBtn.SetActive(false);
-            craftUiBtn.SetActive(false);
+            slTimer.value -= 15 * Time.deltaTime;
+            if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
+            else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
+
+            if (craftUi.activeSelf == true)
+            {
+                SellBtn.SetActive(false);
+                buyBtn.SetActive(false);
+                craftUiBtn.SetActive(false);
+            }
+            else if (craftUi.activeSelf == false)
+            {
+                SellBtn.SetActive(true);
+                buyBtn.SetActive(true);
+                craftUiBtn.SetActive(true);
+            }
+
+            if (DataController.instance.gameData.Skill == false)
+            {
+                CardSkillUi.SetActive(false);
+            }
+            CardInfo();
+            CardSkillUI();
         }
-        else if(craftUi.activeSelf == false)
+        else if (slTimer.value == 0.0f)
         {
-            SellBtn.SetActive(true);
-            buyBtn.SetActive(true);
-            craftUiBtn.SetActive(true);
+            DataController.instance.gameData.endDay = true;
+            if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit)
+            {
+                DataController.instance.gameData.Sell = true;
+                CardInfoUi.SetActive(false);
+                SellBtn.SetActive(false);
+                buyBtn.SetActive(false);
+                craftUiBtn.SetActive(false);
+                SellBtn.SetActive(true);
+            }
+            else
+            {
+                DataController.instance.gameData.endDay = false;
+                slTimer.value = 120.0f;
+                CardInfoUi.SetActive(true);
+                SellBtn.SetActive(true);
+                buyBtn.SetActive(true);
+                craftUiBtn.SetActive(true);
+                DataController.instance.gameData.Day +=1;
+            }
         }
 
-        if(DataController.instance.gameData.Skill == false)
-        {
-            CardSkillUi.SetActive(false);
-        }
 
-        CardInfo();
-        CardSkillUI();
     }
 
     public void CraftUiBtn()
@@ -146,7 +178,7 @@ public class UImanager : MonoBehaviour
                 {
                     GameObject touch = hit.transform.gameObject;
 
-                    if(touch.name == "Tree(Clone)")
+                    if (touch.name == "Tree(Clone)")
                     {
                         CardSkillUi.SetActive(true);
                         TreeSkillBtn.SetActive(true);
@@ -177,7 +209,7 @@ public class UImanager : MonoBehaviour
 
     public void StoreUpgrade()
     {
-        if(DataController.instance.gameData.gold >= 100 && DataController.instance.gameData.storeUpgrade ==0)
+        if (DataController.instance.gameData.gold >= 100 && DataController.instance.gameData.storeUpgrade == 0)
         {
             DataController.instance.gameData.storeUpgrade += 1;
         }
@@ -194,7 +226,7 @@ public class UImanager : MonoBehaviour
 
     private void LateUpdate()
     {
-        WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " +DataController.instance.gameData.WoodCard;
+        WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " + DataController.instance.gameData.WoodCard;
         StoneCountText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
         GoldText.GetComponent<TextMeshProUGUI>().text = "Gold : " + DataController.instance.gameData.gold;
         CardCountText.GetComponent<TextMeshProUGUI>().text = "CardCount : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
