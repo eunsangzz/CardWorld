@@ -23,6 +23,9 @@ public class GameData
     public int CardCount;
     public int CardLimit;
     public int PlayerCount;
+    public int FoodCount;
+
+
     public bool endDay;
     public int Day;
 

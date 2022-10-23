@@ -14,11 +14,11 @@ public class UImanager : MonoBehaviour
     public GameObject buyBtn;
     public GameObject SellUi;
     public GameObject SellBtn;
-    public GameObject CardInfoUi;
-    public GameObject CardSkillUi;
-    public GameObject TreeSkillBtn;
-    public GameObject RockSkillBtn;
-    public GameObject BananaTreeBtn;
+    public GameObject cardInfoUi;
+    public GameObject cardSkillUi;
+    public GameObject treeSkillBtn;
+    public GameObject rockSkillBtn;
+    public GameObject bananaTreeBtn;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
@@ -30,20 +30,28 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI CardNameText;
     public TextMeshProUGUI CardCountText;
     public TextMeshProUGUI CardOver;
+    public TextMeshProUGUI DayText;
 
     public Slider slTimer;
     float fSliderBarTime;
 
+    int feedplayer;
+    int _feedplayer;
+    bool feed = false;
+
 
     private void Start()
     {
+        cardInfoUi.SetActive(false);
+        slTimer.value = 120.0f;
     }
 
     private void Update()
     {
-        if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false)
+        if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //½Ã°£ÀÌ Èå¸¦¶§
         {
             slTimer.value -= 15 * Time.deltaTime;
+            feedplayer = 0;
             if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
             else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
 
@@ -62,43 +70,69 @@ public class UImanager : MonoBehaviour
 
             if (DataController.instance.gameData.Skill == false)
             {
-                CardSkillUi.SetActive(false);
+                cardSkillUi.SetActive(false);
             }
             CardInfo();
             CardSkillUI();
         }
-        else if (slTimer.value == 0.0f)
+        else if (slTimer.value == 0.0f) // ½Ã°£ÀÌ ¸ØÃèÀ»¶§
         {
             DataController.instance.gameData.endDay = true;
             if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit)
             {
                 DataController.instance.gameData.Sell = true;
-                CardInfoUi.SetActive(false);
+                cardInfoUi.SetActive(false);
                 SellBtn.SetActive(false);
                 buyBtn.SetActive(false);
                 craftUiBtn.SetActive(false);
-                SellBtn.SetActive(true);
+                SellUi.SetActive(true);
             }
             else
             {
                 DataController.instance.gameData.endDay = false;
-                slTimer.value = 120.0f;
-                CardInfoUi.SetActive(true);
                 SellBtn.SetActive(true);
                 buyBtn.SetActive(true);
                 craftUiBtn.SetActive(true);
                 DataController.instance.gameData.Day +=1;
+            
             }
+            slTimer.value = 120.0f;
         }
 
-
+        if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2) && feed == true)
+        {
+            DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
+            feed = false;
+        }
+        else if (DataController.instance.gameData.FoodCount < (DataController.instance.gameData.PlayerCount * 2) && feed == true)
+        {
+            _feedplayer = DataController.instance.gameData.PlayerCount - feedplayer;
+            if (_feedplayer != 0)
+            {
+                if (DataController.instance.gameData.FoodCount > 1)
+                {
+                    DataController.instance.gameData.FoodCount -= 2;
+                    feedplayer++;
+                }
+                else
+                {
+                    GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
+                    Destroy(cantfeedplayer1);
+                    feedplayer++;
+                }
+            }
+            else feed = false;
+        }
     }
+
 
     public void CraftUiBtn()
     {
         craftUi.SetActive(true);
         craftUiBtn.SetActive(false);
         buyBtn.SetActive(false);
+        craftUiBtn.SetActive(false);
+        cardInfoUi.SetActive(false);
     }
     public void CraftUiCloseBtn()
     {
@@ -122,7 +156,7 @@ public class UImanager : MonoBehaviour
         {
             if (DataController.instance.gameData.Sell == false)
             {
-                CardInfoUi.SetActive(false);
+                cardInfoUi.SetActive(false);
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
@@ -132,31 +166,31 @@ public class UImanager : MonoBehaviour
 
                     if (touch.name == "Wood(Clone)")
                     {
-                        CardInfoUi.SetActive(true);
+                        cardInfoUi.SetActive(true);
                         CardNameText.GetComponent<TextMeshProUGUI>().text = "Wood";
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "woodinfo";
                     }
                     else if (touch.name == "Stone(Clone)")
                     {
-                        CardInfoUi.SetActive(true);
+                        cardInfoUi.SetActive(true);
                         CardNameText.GetComponent<TextMeshProUGUI>().text = "Stone";
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "stoneinfo";
                     }
                     else if (touch.name == "Tree(Clone)")
                     {
-                        CardInfoUi.SetActive(true);
+                        cardInfoUi.SetActive(true);
                         CardNameText.GetComponent<TextMeshProUGUI>().text = "Tree";
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "treeinfo";
                     }
                     else if (touch.name == "Rock(Clone)")
                     {
-                        CardInfoUi.SetActive(true);
+                        cardInfoUi.SetActive(true);
                         CardNameText.GetComponent<TextMeshProUGUI>().text = "Rock";
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "rockinfo";
                     }
                     else if (touch.name == "House(Clone)")
                     {
-                        CardInfoUi.SetActive(true);
+                        cardInfoUi.SetActive(true);
                         CardNameText.GetComponent<TextMeshProUGUI>().text = "House";
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "houseinfo";
                     }
@@ -180,26 +214,26 @@ public class UImanager : MonoBehaviour
 
                     if (touch.name == "Tree(Clone)")
                     {
-                        CardSkillUi.SetActive(true);
-                        TreeSkillBtn.SetActive(true);
-                        RockSkillBtn.SetActive(false);
-                        BananaTreeBtn.SetActive(false);
+                        cardSkillUi.SetActive(true);
+                        treeSkillBtn.SetActive(true);
+                        rockSkillBtn.SetActive(false);
+                        bananaTreeBtn.SetActive(false);
                         DataController.instance.gameData.Skill = true;
                     }
                     else if (touch.name == "Rock(Clone)")
                     {
-                        CardSkillUi.SetActive(true);
-                        RockSkillBtn.SetActive(true);
-                        TreeSkillBtn.SetActive(false);
-                        BananaTreeBtn.SetActive(false);
+                        cardSkillUi.SetActive(true);
+                        rockSkillBtn.SetActive(true);
+                        treeSkillBtn.SetActive(false);
+                        bananaTreeBtn.SetActive(false);
                         DataController.instance.gameData.Skill = true;
                     }
                     else if (touch.name == "BananaTree(Clone)")
                     {
-                        CardSkillUi.SetActive(true);
-                        BananaTreeBtn.SetActive(true);
-                        RockSkillBtn.SetActive(false);
-                        TreeSkillBtn.SetActive(false);
+                        cardSkillUi.SetActive(true);
+                        bananaTreeBtn.SetActive(true);
+                        rockSkillBtn.SetActive(false);
+                        treeSkillBtn.SetActive(false);
                         DataController.instance.gameData.Skill = true;
                     }
                 }
@@ -230,5 +264,6 @@ public class UImanager : MonoBehaviour
         StoneCountText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
         GoldText.GetComponent<TextMeshProUGUI>().text = "Gold : " + DataController.instance.gameData.gold;
         CardCountText.GetComponent<TextMeshProUGUI>().text = "CardCount : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
+        DayText.GetComponent<TextMeshProUGUI>().text = "Day : " + DataController.instance.gameData.Day;
     }
 }

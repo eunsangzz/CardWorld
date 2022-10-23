@@ -13,7 +13,10 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
+        for(int i=0; i<2;i++)
+        {
+            GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
+        }
     }
 
     private void Update()

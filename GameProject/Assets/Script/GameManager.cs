@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.gold = 100;
         DataController.instance.gameData.CardLimit =15;
         DataController.instance.gameData.CardCount = 0;
-        DataController.instance.gameData.PlayerCount = 1;
+        DataController.instance.gameData.PlayerCount = 2;
         DataController.instance.gameData.Day = 0;
+        DataController.instance.gameData.FoodCount = 0;
 
         DataController.instance.gameData.Sell = false;
         DataController.instance.gameData.Skill = false;
@@ -35,5 +36,7 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.CardCount = (DataController.instance.gameData.WoodCard + DataController.instance.gameData.StoneCard +
         DataController.instance.gameData.TreeCard + DataController.instance.gameData.RockCard + DataController.instance.gameData. BananaTreeCard + DataController.instance.gameData.IronCard +
         DataController.instance.gameData.GoldCard + DataController.instance.gameData.HouseCard);
+
+        DataController.instance.gameData.FoodCount = DataController.instance.gameData.BananaCard;
     }
 }
