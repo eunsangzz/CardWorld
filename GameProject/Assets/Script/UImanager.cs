@@ -19,6 +19,7 @@ public class UImanager : MonoBehaviour
     public GameObject treeSkillBtn;
     public GameObject rockSkillBtn;
     public GameObject bananaTreeBtn;
+    public GameObject nullplayer;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
@@ -36,7 +37,6 @@ public class UImanager : MonoBehaviour
     float fSliderBarTime;
 
     int feedplayer;
-    int _feedplayer;
     bool feed = false;
 
 
@@ -50,7 +50,7 @@ public class UImanager : MonoBehaviour
     {
         if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //시간이 흐를때
         {
-            slTimer.value -= 15 * Time.deltaTime;
+            slTimer.value -= 20 * Time.deltaTime;
             feedplayer = 0;
             if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
             else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
@@ -78,7 +78,10 @@ public class UImanager : MonoBehaviour
         else if (slTimer.value == 0.0f) // 시간이 멈췄을때
         {
             DataController.instance.gameData.endDay = true;
-            feed = true;
+            if (feedplayer != DataController.instance.gameData.PlayerCount)
+            {
+                feed = true;
+            }
             if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit) //카드가 많을때
             {
                 DataController.instance.gameData.Sell = true;
@@ -87,35 +90,89 @@ public class UImanager : MonoBehaviour
                 buyBtn.SetActive(false);
                 craftUiBtn.SetActive(false);
                 SellUi.SetActive(true);
-            }
-            else //카드가 적을때
-            {
-                if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2) && feed == true)
+                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //밥을 못먹은 플레이어 카드가 있을때
                 {
-                    DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
-                    feed = false;
-                }
-                else if (DataController.instance.gameData.FoodCount < (DataController.instance.gameData.PlayerCount * 2) && feed == true)
-                {
-                    _feedplayer = DataController.instance.gameData.PlayerCount - feedplayer;
-                    if (_feedplayer != 0)
+                    if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
                     {
-                        if (DataController.instance.gameData.FoodCount > 1)
+                        DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
+                        feed = false;
+                    }
+                    else
+                    {
+                        if (feedplayer != DataController.instance.gameData.PlayerCount)
                         {
-                            DataController.instance.gameData.FoodCount -= 2;
-                            feedplayer++;
-                        }
-                        else
-                        {
-                            GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
-                            Destroy(cantfeedplayer1);
-                            feedplayer++;
+                            if (DataController.instance.gameData.FoodCount > 1)
+                            {
+                                if(DataController.instance.gameData.PlayerCount != 0)
+                                {
+                                    DataController.instance.gameData.FoodCount -= 2;
+                                    feedplayer++;
+                                }
+                                else nullplayer.SetActive(true);
+                            }
+                            else
+                            {
+                                if(DataController.instance.gameData.PlayerCount != 0)
+                                {
+                                    GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
+                                    Destroy(cantfeedplayer1);
+                                    feedplayer++;
+                                }
+                                else nullplayer.SetActive(true);
+                            }
                         }
                     }
-                    else feed = false;
                 }
-                if(feed == false)
+
+                if (feedplayer == DataController.instance.gameData.PlayerCount)
                 {
+                    Debug.Log("3");
+                    feed = false;
+                }
+            }   
+            else //카드가 적을때
+            {
+                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //밥을 못먹은 플레이어 카드가 있을때
+                {
+                    if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
+                    {
+                        DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
+                        feed = false;
+                    }
+                    else
+                    {
+                        if (feedplayer != DataController.instance.gameData.PlayerCount)
+                        {
+                            if (DataController.instance.gameData.FoodCount > 1)
+                            {
+                                if (DataController.instance.gameData.PlayerCount != 0)
+                                {
+                                    DataController.instance.gameData.FoodCount -= 2;
+                                    feedplayer++;
+                                }
+                                else nullplayer.SetActive(true);
+                            }
+                            else
+                            {
+                                if (DataController.instance.gameData.PlayerCount != 0)
+                                {
+                                    GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
+                                    Destroy(cantfeedplayer1);
+                                    feedplayer++;
+                                }
+                                else nullplayer.SetActive(true);
+                            }
+                        }
+                    }
+                }
+                if (feedplayer == DataController.instance.gameData.PlayerCount)
+                {
+                    Debug.Log("3");
+                    feed = false;
+                }
+                if (feed == false)
+                {
+                    Debug.Log("next");
                     DataController.instance.gameData.endDay = false;
                     SellBtn.SetActive(true);
                     buyBtn.SetActive(true);
