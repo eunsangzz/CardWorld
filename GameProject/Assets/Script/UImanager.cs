@@ -48,9 +48,9 @@ public class UImanager : MonoBehaviour
 
     private void Update()
     {
-        if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //½Ã°£ÀÌ Èå¸¦¶§
+        if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½å¸¦ï¿½ï¿½
         {
-            slTimer.value -= 20 * Time.deltaTime;
+            slTimer.value -= 40 * Time.deltaTime;
             feedplayer = 0;
             if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
             else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
@@ -75,14 +75,14 @@ public class UImanager : MonoBehaviour
             CardInfo();
             CardSkillUI();
         }
-        else if (slTimer.value == 0.0f) // ½Ã°£ÀÌ ¸ØÃèÀ»¶§
+        else if (slTimer.value == 0.0f) // ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             DataController.instance.gameData.endDay = true;
             if (feedplayer != DataController.instance.gameData.PlayerCount)
             {
                 feed = true;
             }
-            if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit) //Ä«µå°¡ ¸¹À»¶§
+            if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit) //Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 DataController.instance.gameData.Sell = true;
                 cardInfoUi.SetActive(false);
@@ -90,7 +90,7 @@ public class UImanager : MonoBehaviour
                 buyBtn.SetActive(false);
                 craftUiBtn.SetActive(false);
                 SellUi.SetActive(true);
-                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //¹äÀ» ¸ø¸ÔÀº ÇÃ·¹ÀÌ¾î Ä«µå°¡ ÀÖÀ»¶§
+                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 {
                     if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
                     {
@@ -130,9 +130,9 @@ public class UImanager : MonoBehaviour
                     feed = false;
                 }
             }   
-            else //Ä«µå°¡ ÀûÀ»¶§
+            else //Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
-                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //¹äÀ» ¸ø¸ÔÀº ÇÃ·¹ÀÌ¾î Ä«µå°¡ ÀÖÀ»¶§
+                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 {
                     if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
                     {
@@ -314,6 +314,11 @@ public class UImanager : MonoBehaviour
         {
             DataController.instance.gameData.storeUpgrade += 1;
         }
+
+    }
+
+    public void CloseBtn()
+    {
 
     }
 

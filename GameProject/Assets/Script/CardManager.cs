@@ -29,8 +29,38 @@ public class CardManager : MonoBehaviour
         if (DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
         {
             int rand = Random.Range(0, 5);
-            float randPosX = Random.Range(-5, 5);
-            float randPosY = Random.Range(-4, 4);
+            float randPosX = Random.Range(-5.0f, 5.0f);
+            float randPosY = Random.Range(-4.0f, 4.0f);
+            GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
+            DataController.instance.gameData.BasicCardList.Add(_Card);
+            if (rand == 0) DataController.instance.gameData.WoodCard += 1;
+            if (rand == 1) DataController.instance.gameData.StoneCard += 1;
+            if (rand == 2) DataController.instance.gameData.TreeCard += 1;
+            if (rand == 3) DataController.instance.gameData.RockCard += 1;
+            if (rand == 4) DataController.instance.gameData.BananaTreeCard += 1;
+            if (rand == 5) DataController.instance.gameData.BananaCard += 1;
+            DataController.instance.gameData.gold -= 3;
+        }
+        if (DataController.instance.gameData.storeUpgrade == 1 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
+        {
+            int rand = Random.Range(0, 5);
+            float randPosX = Random.Range(-5.0f, 5.0f);
+            float randPosY = Random.Range(-4.0f, 4.0f);
+            GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
+            DataController.instance.gameData.BasicCardList.Add(_Card);
+            if (rand == 0) DataController.instance.gameData.WoodCard += 1;
+            if (rand == 1) DataController.instance.gameData.StoneCard += 1;
+            if (rand == 2) DataController.instance.gameData.TreeCard += 1;
+            if (rand == 3) DataController.instance.gameData.RockCard += 1;
+            if (rand == 4) DataController.instance.gameData.BananaTreeCard += 1;
+            if (rand == 5) DataController.instance.gameData.BananaCard += 1;
+            DataController.instance.gameData.gold -= 3;
+        }
+        if (DataController.instance.gameData.storeUpgrade == 2 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
+        {
+            int rand = Random.Range(0, 5);
+            float randPosX = Random.Range(-5.0f, 5.0f);
+            float randPosY = Random.Range(-4.0f, 4.0f);
             GameObject _Card = Instantiate(BasicCardSet[rand], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
             DataController.instance.gameData.BasicCardList.Add(_Card);
             if (rand == 0) DataController.instance.gameData.WoodCard += 1;
@@ -107,7 +137,7 @@ public class CardManager : MonoBehaviour
                         DataController.instance.gameData.gold += 1;
                         DataController.instance.gameData.BananaCard -= 1;
                     }
-                    if (touch.name == "Housh(Clone)")
+                    if (touch.name == "House(Clone)")
                     {
                         DataController.instance.gameData.gold += 3;
                         DataController.instance.gameData.HouseCard -= 1;
@@ -169,6 +199,18 @@ public class CardManager : MonoBehaviour
             DataController.instance.gameData.BananaCard += 3;
             DataController.instance.gameData.BananaTreeCard -= 1;
             DataController.instance.gameData.Skill = false;
+        }
+    }
+
+    public void StoreUpgrade()
+    {
+        if(DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 30)
+        {
+            DataController.instance.gameData.storeUpgrade += 1;
+        }
+        if(DataController.instance.gameData.storeUpgrade == 1 && DataController.instance.gameData.gold >= 60)
+        {
+            DataController.instance.gameData.storeUpgrade += 1;
         }
     }
 }

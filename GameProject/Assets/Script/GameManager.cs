@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,19 +25,36 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.PlayerCount = 2;
         DataController.instance.gameData.Day = 0;
         DataController.instance.gameData.FoodCount = 0;
+        DataController.instance.gameData.Stage =1;
+        DataController.instance.gameData.BossStage = false;
 
         DataController.instance.gameData.Sell = false;
         DataController.instance.gameData.Skill = false;
         DataController.instance.gameData.endDay = false;
+        DataController.instance.gameData.Fight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameOverScene();
         DataController.instance.gameData.CardCount = (DataController.instance.gameData.WoodCard + DataController.instance.gameData.StoneCard +
         DataController.instance.gameData.TreeCard + DataController.instance.gameData.RockCard + DataController.instance.gameData. BananaTreeCard + DataController.instance.gameData.IronCard +
         DataController.instance.gameData.GoldCard + DataController.instance.gameData.HouseCard);
 
         DataController.instance.gameData.FoodCount = DataController.instance.gameData.BananaCard;
+    }
+
+    void MainSecne()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    void GameOverScene()
+    {
+        if(DataController.instance.gameData.PlayerCount == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

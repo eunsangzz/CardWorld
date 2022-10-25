@@ -9,6 +9,26 @@ public class CraftManager : MonoBehaviour
     public GameObject ErrorUi;
     public GameObject CraftUI;
 
+    bool HouseCraft = false;
+    int CraftNum =0;
+
+    void Update()
+    {
+        if(HouseCraft == true && CraftNum < 2)
+        {
+            CraftDelete(1);
+            if(CraftNum == 1)
+            {
+                HouseCraft =false;
+            }
+            if(CraftNum == 0)
+            {
+                CraftDelete(2);
+            }
+            CraftNum += 1;
+        }
+    }
+
     public void CardCraft()
     {
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
@@ -23,23 +43,9 @@ public class CraftManager : MonoBehaviour
                 GameObject _Card = Instantiate(CraftCardSet[1], new Vector3(randPosX, randPosY, 0), Quaternion.identity);
                 DataController.instance.gameData.CraftCardList.Add(_Card);
 
-                //����
-                GameObject _delWoodCard1 = GameObject.Find("Wood(Clone)");
-                Destroy(_delWoodCard1);
+                HouseCraft = true;
 
-                //GameObject _delCard1 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                //DataController.instance.gameData.BasicCardList.Remove(_delCard1);
-
-                GameObject _delStoneCard = GameObject.Find("Stone(Clone)");
-                Destroy(_delStoneCard);
-
-                //GameObject _delWoodCard2 = GameObject.Find("Wood(Clone)");
-                //Destroy(_delWoodCard2);
-
-                //GameObject _delCard2 = DataController.instance.gameData.BasicCardList.Find(item => item.name == "Wood(Clone)");
-                //DataController.instance.gameData.BasicCardList.Remove(_delCard2);
-
-                DataController.instance.gameData.WoodCard -= 1;
+                DataController.instance.gameData.WoodCard -= 2;
                 DataController.instance.gameData.StoneCard -= 1;
                 DataController.instance.gameData.HouseCard += 1;
                 DataController.instance.gameData.CardLimit += 3;
@@ -53,6 +59,23 @@ public class CraftManager : MonoBehaviour
     public void ErrorClose()
     {
         ErrorUi.SetActive(false);
+    }
+
+    void CraftDelete(int CardNum)
+    {
+        switch(CardNum)
+        {
+            case 1:
+                GameObject _delWoodCard1 = GameObject.Find("Wood(Clone)");
+                Debug.Log("1");
+                Destroy(_delWoodCard1);
+                break;
+            case 2:
+                GameObject _delStoneCard = GameObject.Find("Stone(Clone)");
+                Destroy(_delStoneCard);
+                break;
+                
+        }
     }
 
 }
