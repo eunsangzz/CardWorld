@@ -13,7 +13,7 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        for(int i=0; i<2;i++)
+        for (int i = 0; i < 2; i++)
         {
             GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
         }
@@ -117,22 +117,22 @@ public class CardManager : MonoBehaviour
                         DataController.instance.gameData.gold += 2;
                         DataController.instance.gameData.StoneCard -= 1;
                     }
-                    if( touch.name == "Tree(Clone)")
+                    if (touch.name == "Tree(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
                         DataController.instance.gameData.TreeCard -= 1;
                     }
-                    if( touch.name == "Rock(Clone)")
+                    if (touch.name == "Rock(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
                         DataController.instance.gameData.RockCard -= 1;
                     }
-                    if( touch.name == "BananaTree(Clone)")
+                    if (touch.name == "BananaTree(Clone)")
                     {
                         DataController.instance.gameData.gold += 2;
                         DataController.instance.gameData.BananaTreeCard -= 1;
                     }
-                    if( touch.name == "Banana(Clone)")
+                    if (touch.name == "Banana(Clone)")
                     {
                         DataController.instance.gameData.gold += 1;
                         DataController.instance.gameData.BananaCard -= 1;
@@ -204,11 +204,11 @@ public class CardManager : MonoBehaviour
 
     public void StoreUpgrade()
     {
-        if(DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 30)
+        if (DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 30)
         {
             DataController.instance.gameData.storeUpgrade += 1;
         }
-        if(DataController.instance.gameData.storeUpgrade == 1 && DataController.instance.gameData.gold >= 60)
+        if (DataController.instance.gameData.storeUpgrade == 1 && DataController.instance.gameData.gold >= 60)
         {
             DataController.instance.gameData.storeUpgrade += 1;
         }

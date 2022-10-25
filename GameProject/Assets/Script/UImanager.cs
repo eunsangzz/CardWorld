@@ -77,110 +77,114 @@ public class UImanager : MonoBehaviour
         }
         else if (slTimer.value == 0.0f) // �ð��� ��������
         {
-            DataController.instance.gameData.endDay = true;
-            if (feedplayer != DataController.instance.gameData.PlayerCount)
+            if (DataController.instance.gameData.PlayerCount != 0)
             {
-                feed = true;
-            }
-            if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit) //ī�尡 ������
-            {
-                DataController.instance.gameData.Sell = true;
-                cardInfoUi.SetActive(false);
-                SellBtn.SetActive(false);
-                buyBtn.SetActive(false);
-                craftUiBtn.SetActive(false);
-                SellUi.SetActive(true);
-                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //���� ������ �÷��̾� ī�尡 ������
+                DataController.instance.gameData.endDay = true;
+                if (feedplayer != DataController.instance.gameData.PlayerCount)
                 {
-                    if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
+                    feed = true;
+                }
+                if (DataController.instance.gameData.CardCount >= DataController.instance.gameData.CardLimit) //ī�尡 ������
+                {
+                    DataController.instance.gameData.Sell = true;
+                    cardInfoUi.SetActive(false);
+                    SellBtn.SetActive(false);
+                    buyBtn.SetActive(false);
+                    craftUiBtn.SetActive(false);
+                    SellUi.SetActive(true);
+                    if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //���� ������ �÷��̾� ī�尡 ������
                     {
-                        DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
-                        feed = false;
-                    }
-                    else
-                    {
-                        if (feedplayer != DataController.instance.gameData.PlayerCount)
+                        if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
                         {
-                            if (DataController.instance.gameData.FoodCount > 1)
+                            DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
+                            feed = false;
+                        }
+                        else
+                        {
+                            if (feedplayer != DataController.instance.gameData.PlayerCount)
                             {
-                                if(DataController.instance.gameData.PlayerCount != 0)
+                                if (DataController.instance.gameData.FoodCount > 1)
                                 {
-                                    DataController.instance.gameData.FoodCount -= 2;
-                                    feedplayer++;
+                                    if (DataController.instance.gameData.PlayerCount != 0)
+                                    {
+                                        DataController.instance.gameData.FoodCount -= 2;
+                                        feedplayer++;
+                                    }
+                                    else nullplayer.SetActive(true);
                                 }
-                                else nullplayer.SetActive(true);
-                            }
-                            else
-                            {
-                                if(DataController.instance.gameData.PlayerCount != 0)
+                                else
                                 {
-                                    GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
-                                    Destroy(cantfeedplayer1);
-                                    feedplayer++;
+                                    if (DataController.instance.gameData.PlayerCount != 0)
+                                    {
+                                        GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
+                                        Destroy(cantfeedplayer1);
+                                        feedplayer++;
+                                    }
+                                    else nullplayer.SetActive(true);
                                 }
-                                else nullplayer.SetActive(true);
                             }
                         }
                     }
-                }
 
-                if (feedplayer == DataController.instance.gameData.PlayerCount)
-                {
-                    Debug.Log("3");
-                    feed = false;
-                }
-            }   
-            else //ī�尡 ������
-            {
-                if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //���� ������ �÷��̾� ī�尡 ������
-                {
-                    if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
+                    if (feedplayer == DataController.instance.gameData.PlayerCount)
                     {
-                        DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
+                        Debug.Log("3");
                         feed = false;
                     }
-                    else
+                }
+                else //ī�尡 ������
+                {
+                    if (feedplayer != DataController.instance.gameData.PlayerCount && feed == true) //���� ������ �÷��̾� ī�尡 ������
                     {
-                        if (feedplayer != DataController.instance.gameData.PlayerCount)
+                        if (DataController.instance.gameData.FoodCount >= (DataController.instance.gameData.PlayerCount * 2))
                         {
-                            if (DataController.instance.gameData.FoodCount > 1)
+                            DataController.instance.gameData.FoodCount -= (DataController.instance.gameData.PlayerCount * 2);
+                            feed = false;
+                        }
+                        else
+                        {
+                            if (feedplayer != DataController.instance.gameData.PlayerCount)
                             {
-                                if (DataController.instance.gameData.PlayerCount != 0)
+                                if (DataController.instance.gameData.FoodCount > 1)
                                 {
-                                    DataController.instance.gameData.FoodCount -= 2;
-                                    feedplayer++;
+                                    if (DataController.instance.gameData.PlayerCount != 0)
+                                    {
+                                        DataController.instance.gameData.FoodCount -= 2;
+                                        feedplayer++;
+                                    }
+                                    else nullplayer.SetActive(true);
                                 }
-                                else nullplayer.SetActive(true);
-                            }
-                            else
-                            {
-                                if (DataController.instance.gameData.PlayerCount != 0)
+                                else
                                 {
-                                    GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
-                                    Destroy(cantfeedplayer1);
-                                    feedplayer++;
+                                    if (DataController.instance.gameData.PlayerCount != 0)
+                                    {
+                                        GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
+                                        Destroy(cantfeedplayer1);
+                                        feedplayer++;
+                                    }
+                                    else nullplayer.SetActive(true);
                                 }
-                                else nullplayer.SetActive(true);
                             }
                         }
                     }
-                }
-                if (feedplayer == DataController.instance.gameData.PlayerCount)
-                {
-                    Debug.Log("3");
-                    feed = false;
-                }
-                if (feed == false)
-                {
-                    Debug.Log("next");
-                    DataController.instance.gameData.endDay = false;
-                    SellBtn.SetActive(true);
-                    buyBtn.SetActive(true);
-                    craftUiBtn.SetActive(true);
-                    DataController.instance.gameData.Day += 1;
-                    slTimer.value = 120.0f;
+                    if (feedplayer == DataController.instance.gameData.PlayerCount)
+                    {
+                        Debug.Log("3");
+                        feed = false;
+                    }
+                    if (feed == false)
+                    {
+                        Debug.Log("next");
+                        DataController.instance.gameData.endDay = false;
+                        SellBtn.SetActive(true);
+                        buyBtn.SetActive(true);
+                        craftUiBtn.SetActive(true);
+                        DataController.instance.gameData.Day += 1;
+                        slTimer.value = 120.0f;
+                    }
                 }
             }
+
         }
     }
 
