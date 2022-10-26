@@ -120,15 +120,15 @@ public class FightManager : MonoBehaviour
 
     void Fight()
     {
-        int rand = Random.Range(0, 10);
+        int rand = Random.Range(0, 20);
 
         int attackrand = Random.Range(0, 5);
 
-        if (rand < 7 && DataController.instance.gameData.Attack == true) //player attack
+        if (rand < 16 && DataController.instance.gameData.Attack == true) //player attack
         {
             DataController.instance.gameData.PlayerAttack = true;
         }
-        else if(rand >= 7 && DataController.instance.gameData.Attack == true)//Enemy1Card attack
+        else if(rand >= 16 && DataController.instance.gameData.Attack == true)//Enemy1Card attack
         {
             DataController.instance.gameData.EnemyAttack = true;
         }
