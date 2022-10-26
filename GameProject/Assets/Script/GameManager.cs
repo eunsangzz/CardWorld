@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         DataController.instance.gameData.Skill = false;
         DataController.instance.gameData.endDay = false;
         DataController.instance.gameData.Fight = false;
+        DataController.instance.gameData.Boss1Hp = 45;
+        DataController.instance.gameData.Boss2Hp = 70;
     }
 
     // Update is called once per frame

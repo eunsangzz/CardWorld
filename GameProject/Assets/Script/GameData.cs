@@ -33,11 +33,16 @@ public class GameData
     public int Day;
     public int Stage;
     public bool BossStage;
+    public int Boss1Hp;
+    public int Boss2Hp;
 
 
     public bool Sell;
     public bool Skill;
     public bool Fight;
+    public bool PlayerAttack;
+    public bool EnemyAttack;
+    public bool Attack;
 
     public GameObject[] Card = new GameObject[2]; // 카드 프리팹 저장
     public int storeUpgrade; // 상점 단계에 따라 나오는 재료카드 많아짐

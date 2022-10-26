@@ -108,22 +108,30 @@ public class FightManager : MonoBehaviour
             }
         }
 
+        DataController.instance.gameData.Attack = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        Fight();
+    }
+
+    void Fight()
+    {
         int rand = Random.Range(0, 10);
 
         int attackrand = Random.Range(0, 5);
 
-        if (rand < 8) //player attack
+        if (rand < 7 && DataController.instance.gameData.Attack == true) //player attack
         {
-
+            DataController.instance.gameData.PlayerAttack = true;
         }
-        else //Enemy1Card attack
+        else if(rand >= 7 && DataController.instance.gameData.Attack == true)//Enemy1Card attack
         {
-
+            DataController.instance.gameData.EnemyAttack = true;
         }
     }
+
 }
