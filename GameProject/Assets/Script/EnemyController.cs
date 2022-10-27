@@ -51,5 +51,6 @@ public class EnemyController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        
     }
 }

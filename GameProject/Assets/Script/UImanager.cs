@@ -50,7 +50,7 @@ public class UImanager : MonoBehaviour
     {
         if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //�ð��� �带��
         {
-            slTimer.value -= 40 * Time.deltaTime;
+            slTimer.value -= 10 * Time.deltaTime;
             feedplayer = 0;
             if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
             else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
@@ -179,7 +179,6 @@ public class UImanager : MonoBehaviour
                         SellBtn.SetActive(true);
                         buyBtn.SetActive(true);
                         craftUiBtn.SetActive(true);
-                        DataController.instance.gameData.Day += 1;
                         slTimer.value = 120.0f;
                     }
                 }

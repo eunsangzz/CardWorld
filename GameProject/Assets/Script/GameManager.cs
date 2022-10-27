@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         if(DataController.instance.gameData.PlayerCount == 0)
         {
+            Debug.Log("end");
             SceneManager.LoadScene("GameOver");
         }
     }
