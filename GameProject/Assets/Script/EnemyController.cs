@@ -48,9 +48,24 @@ public class EnemyController : MonoBehaviour
             this.gameObject.transform.Translate(player.transform.position);
             this.gameObject.transform.Translate(pos);
         }
+        if(hp == 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
     void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.name == "WoodSword(Clone)")
+        {
+            other.gameObject.GetComponent<PlayerController>().hp -= damage;
+        }
+        if(other.gameObject.name == "StoneSword(Clone")
+        {
+            other.gameObject.GetComponent<PlayerController>().hp -= damage;
+        }
+        if(other.gameObject.name == "IronSword(Clone)")
+        {
+            other.gameObject.GetComponent<PlayerController>().hp -= damage;
+        }
     }
 }

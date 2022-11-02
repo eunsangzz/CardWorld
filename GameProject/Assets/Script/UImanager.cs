@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class UImanager : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class UImanager : MonoBehaviour
     public GameObject rockSkillBtn;
     public GameObject bananaTreeBtn;
     public GameObject nullplayer;
+
+    public GameObject tutoInfoUi;
+    public TextMeshProUGUI tutoBuyText;
+    public TextMeshProUGUI tutoSellText;
+    public TextMeshProUGUI tutoCraftText;
+    public TextMeshProUGUI tutoDayText;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
@@ -320,11 +327,6 @@ public class UImanager : MonoBehaviour
 
     }
 
-    public void CloseBtn()
-    {
-
-    }
-
     private void LateUpdate()
     {
         WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " + DataController.instance.gameData.WoodCard;
@@ -332,5 +334,26 @@ public class UImanager : MonoBehaviour
         GoldText.GetComponent<TextMeshProUGUI>().text = "Gold : " + DataController.instance.gameData.gold;
         CardCountText.GetComponent<TextMeshProUGUI>().text = "CardCount : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
         DayText.GetComponent<TextMeshProUGUI>().text = "Day : " + DataController.instance.gameData.Day;
+
+        tutoBuyText.GetComponent<TextMeshProUGUI>().text = "You have 3 coin can buy Card \n if upgrade store ";
+        tutoCraftText.GetComponent<TextMeshProUGUI>().text = "";
+        tutoDayText.GetComponent<TextMeshProUGUI>().text = "";
+        tutoSellText.GetComponent<TextMeshProUGUI>().text = "";
     }
+
+    public void MainSecne()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void StartBtn()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void TutoBtn()
+    {
+        SceneManager.LoadScene("Tuto");
+    }
+
 }
