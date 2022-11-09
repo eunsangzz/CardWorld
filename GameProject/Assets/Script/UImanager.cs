@@ -20,12 +20,15 @@ public class UImanager : MonoBehaviour
     public GameObject treeSkillBtn;
     public GameObject rockSkillBtn;
     public GameObject bananaTreeBtn;
-    public GameObject nullplayer;
 
     public GameObject tutoInfoUi;
+    public GameObject tutoBuy;
     public TextMeshProUGUI tutoBuyText;
+    public GameObject tutoSell;
     public TextMeshProUGUI tutoSellText;
+    public GameObject tutoCraft;
     public TextMeshProUGUI tutoCraftText;
+    public GameObject tutoDay;
     public TextMeshProUGUI tutoDayText;
 
     public TextMeshProUGUI WoodCountText;
@@ -44,21 +47,33 @@ public class UImanager : MonoBehaviour
     float fSliderBarTime;
 
     int feedplayer;
+    int notfeedplayer;
     bool feed = false;
+    bool daytuto;
 
 
     private void Start()
     {
         cardInfoUi.SetActive(false);
         slTimer.value = 120.0f;
+        daytuto = false;
     }
 
     private void Update()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name == "Tuto") DataController.instance.gameData.tuto = true;
+        else DataController.instance.gameData.tuto = false;
+        Debug.Log(DataController.instance.gameData.PlayerCount);
+
+        if(DataController.instance.gameData.PlayerCount == 0) SceneManager.LoadScene("MainScene");
+
         if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //�ð��� �带��
         {
-            slTimer.value -= 10 * Time.deltaTime;
+            slTimer.value -= 20 * Time.deltaTime;
             feedplayer = 0;
+            DataController.instance.gameData.PlayerCount = DataController.instance.gameData.PlayerCount - notfeedplayer;
+            notfeedplayer = 0;
             if (DataController.instance.gameData.Sell == true) SellUi.SetActive(true);
             else if (DataController.instance.gameData.Sell == false) SellUi.SetActive(false);
 
@@ -81,9 +96,17 @@ public class UImanager : MonoBehaviour
             }
             CardInfo();
             CardSkillUI();
+            TutoInfoOff();
         }
         else if (slTimer.value == 0.0f) // �ð��� ��������
         {
+            if(DataController.instance.gameData.tuto == true && daytuto == false) 
+            {
+                daytuto = true;
+                Time.timeScale = 0;
+                tutoInfoUi.SetActive(true);
+                tutoDay.SetActive(true);
+            }
             if (DataController.instance.gameData.PlayerCount != 0)
             {
                 DataController.instance.gameData.endDay = true;
@@ -117,7 +140,7 @@ public class UImanager : MonoBehaviour
                                         DataController.instance.gameData.FoodCount -= 2;
                                         feedplayer++;
                                     }
-                                    else nullplayer.SetActive(true);
+                                    else SceneManager.LoadScene("MainScene");
                                 }
                                 else
                                 {
@@ -125,9 +148,11 @@ public class UImanager : MonoBehaviour
                                     {
                                         GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
                                         Destroy(cantfeedplayer1);
+                                        DataController.instance.gameData.PlayerCount -=1;
                                         feedplayer++;
+                                        notfeedplayer++;
                                     }
-                                    else nullplayer.SetActive(true);
+                                    else SceneManager.LoadScene("MainScene");
                                 }
                             }
                         }
@@ -159,7 +184,7 @@ public class UImanager : MonoBehaviour
                                         DataController.instance.gameData.FoodCount -= 2;
                                         feedplayer++;
                                     }
-                                    else nullplayer.SetActive(true);
+                                    else SceneManager.LoadScene("MainScene");
                                 }
                                 else
                                 {
@@ -168,8 +193,9 @@ public class UImanager : MonoBehaviour
                                         GameObject cantfeedplayer1 = GameObject.FindGameObjectWithTag("Player");
                                         Destroy(cantfeedplayer1);
                                         feedplayer++;
+                                        notfeedplayer++;
                                     }
-                                    else nullplayer.SetActive(true);
+                                    else SceneManager.LoadScene("MainScene");
                                 }
                             }
                         }
@@ -197,6 +223,13 @@ public class UImanager : MonoBehaviour
 
     public void CraftUiBtn()
     {
+        if(DataController.instance.gameData.tuto == true)
+        {
+            tutoInfoUi.SetActive(true);
+            tutoCraft.SetActive(true);
+            Time.timeScale =0;
+
+        }
         craftUi.SetActive(true);
         craftUiBtn.SetActive(false);
         buyBtn.SetActive(false);
@@ -264,6 +297,22 @@ public class UImanager : MonoBehaviour
                         CardInfoText.GetComponent<TextMeshProUGUI>().text = "houseinfo";
                     }
                 }
+            }
+        }
+    }
+
+    private void TutoInfoOff()
+    {
+        if(tutoInfoUi.activeSelf == true)
+        {
+            if(Input.GetMouseButton(0))
+            {
+                tutoInfoUi.SetActive(false);
+                tutoBuy.SetActive(false);
+                tutoCraft.SetActive(false);
+                tutoSell.SetActive(false);
+                tutoDay.SetActive(false);
+                Time.timeScale =1;
             }
         }
     }
