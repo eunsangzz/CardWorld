@@ -12,11 +12,16 @@ public class CardManager : MonoBehaviour
     public GameObject tutoSell;
     public GameObject tutoBuy;
     public GameObject tutoUi;
+
+    bool tutobuy;
+    bool tutosell;
     //카드 구매버튼 눌렀을때 저장해둔 프리팹중에 랜덤으로 하나 생성 
     //구매 버튼 업그레이드 적용해서 1단계 나무 돌 2단계 철 금 등등 으로 세팅
 
     private void Start()
     {
+        tutobuy = false;
+        tutosell = false;
         for (int i = 0; i < 2; i++)
         {
             GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
@@ -30,11 +35,12 @@ public class CardManager : MonoBehaviour
 
     public void CardBuy()//카드 살때
     {
-        if(DataController.instance.gameData.tuto == true)
+        if(DataController.instance.gameData.tuto == true && tutobuy == false)
         {
             Time.timeScale =0;
             tutoUi.SetActive(true);
             tutoBuy.SetActive(true);
+            tutobuy = true; 
         }
         if (DataController.instance.gameData.storeUpgrade == 0 && DataController.instance.gameData.gold >= 3)//업그레이드 없음
         {
@@ -86,11 +92,12 @@ public class CardManager : MonoBehaviour
 
     public void SellActive()
     {
-        if(DataController.instance.gameData.tuto == true)
+        if(DataController.instance.gameData.tuto == true && tutosell == false)
         {
             Time.timeScale =0;
             tutoUi.SetActive(true);
             tutoSell.SetActive(true);
+            tutosell = true;
         }
         if (DataController.instance.gameData.Sell == false)
         {

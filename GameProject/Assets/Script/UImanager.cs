@@ -30,6 +30,8 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI tutoCraftText;
     public GameObject tutoDay;
     public TextMeshProUGUI tutoDayText;
+    bool tutoday;
+    bool tutocraft;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
@@ -49,14 +51,14 @@ public class UImanager : MonoBehaviour
     int feedplayer;
     int notfeedplayer;
     bool feed = false;
-    bool daytuto;
 
 
     private void Start()
     {
         cardInfoUi.SetActive(false);
         slTimer.value = 120.0f;
-        daytuto = false;
+        tutoday = false;
+        tutocraft = false;
     }
 
     private void Update()
@@ -100,9 +102,9 @@ public class UImanager : MonoBehaviour
         }
         else if (slTimer.value == 0.0f) // �ð��� ��������
         {
-            if(DataController.instance.gameData.tuto == true && daytuto == false) 
+            if(DataController.instance.gameData.tuto == true && tutoday == false) 
             {
-                daytuto = true;
+                tutoday = true;
                 Time.timeScale = 0;
                 tutoInfoUi.SetActive(true);
                 tutoDay.SetActive(true);
@@ -223,12 +225,12 @@ public class UImanager : MonoBehaviour
 
     public void CraftUiBtn()
     {
-        if(DataController.instance.gameData.tuto == true)
+        if(DataController.instance.gameData.tuto == true && tutocraft == false)
         {
             tutoInfoUi.SetActive(true);
             tutoCraft.SetActive(true);
             Time.timeScale =0;
-
+            tutocraft = true;
         }
         craftUi.SetActive(true);
         craftUiBtn.SetActive(false);

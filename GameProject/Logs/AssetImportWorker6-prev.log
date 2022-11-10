@@ -1,0 +1,839 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Professional' Language: 'ko' Physical Memory: 48961 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker6
+-projectPath
+C:/Users/ajffj/Desktop/CardWorld/GameProject
+-logFile
+Logs/AssetImportWorker6.log
+-srvPort
+9227
+Successfully changed project path to: C:/Users/ajffj/Desktop/CardWorld/GameProject
+C:/Users/ajffj/Desktop/CardWorld/GameProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 147.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.6f1 (7da38d85baf6)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/ajffj/Desktop/CardWorld/GameProject/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
+    Vendor:   NVIDIA
+    VRAM:     8043 MB
+    Driver:   31.0.15.1748
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.034557 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 117.49 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.892 seconds
+Domain Reload Profiling:
+	ReloadAssembly (893ms)
+		BeginReloadAssembly (156ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (540ms)
+			LoadAssemblies (150ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (113ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (330ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (118ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (137ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.014780 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 121.61 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.451 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1452ms)
+		BeginReloadAssembly (143ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1153ms)
+			LoadAssemblies (128ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (275ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (624ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (122ms)
+				BeforeProcessingInitializeOnLoad (140ms)
+				ProcessInitializeOnLoadAttributes (286ms)
+				ProcessInitializeOnLoadMethodAttributes (53ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4115 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 44 unused Assets / (222.6 KB). Loaded Objects now: 4579.
+Memory consumption went from 165.5 MB to 165.3 MB.
+Total: 2.885900 ms (FindLiveObjects: 0.217500 ms CreateObjectMapping: 0.127800 ms MarkObjects: 2.401400 ms  DeleteObjects: 0.138000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 955159.652524 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_canabis_LP.png
+  artifactKey: Guid(e4eee81d270ef374bbd94b96dcece940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_canabis_LP.png using Guid(e4eee81d270ef374bbd94b96dcece940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73dc341371ed3d817e19bb98eeb195ab') in 0.389113 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_gems-green_LP.png
+  artifactKey: Guid(21bc17530cc8fce449a7bcc880d723da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_gems-green_LP.png using Guid(21bc17530cc8fce449a7bcc880d723da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2ed5f14ad1ec8b80234972794bc49aa') in 0.091289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_stone-snow_LP.png
+  artifactKey: Guid(134f12d2aaec5af409ed3c575c797cd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_stone-snow_LP.png using Guid(134f12d2aaec5af409ed3c575c797cd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92de374045a68af8806e1c0036245f07') in 0.083695 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_stone_LP.png
+  artifactKey: Guid(1a2c8df41b5e407449901242f514e4f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_stone_LP.png using Guid(1a2c8df41b5e407449901242f514e4f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19e398539aa7c6f3e91cae9b904d4c49') in 0.083004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_water-drop_LP.png
+  artifactKey: Guid(36e95594287618a488409125e5f8578e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_water-drop_LP.png using Guid(36e95594287618a488409125e5f8578e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12c19587a1f3af1f04675f779fa06731') in 0.072486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_gunpowder_LP.png
+  artifactKey: Guid(c654cba8b1e8d25428069ff1036444a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Resources Nature/icon_gunpowder_LP.png using Guid(c654cba8b1e8d25428069ff1036444a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41d26e6fb290ba957690695c5093cac9') in 0.066753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 539.979198 seconds.
+  path: Assets/Prefab/Wood.prefab
+  artifactKey: Guid(d5761f25dac704faf82d39bf26b12b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Wood.prefab using Guid(d5761f25dac704faf82d39bf26b12b00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2148e2599c3dfa7bfb17f8011e1e7ffc') in 0.048681 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013947 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.283 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1284ms)
+		BeginReloadAssembly (192ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (960ms)
+			LoadAssemblies (157ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (271ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (433ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (114ms)
+				ProcessInitializeOnLoadAttributes (235ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (19ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (22ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4097 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (190.0 KB). Loaded Objects now: 4594.
+Memory consumption went from 168.6 MB to 168.4 MB.
+Total: 3.754400 ms (FindLiveObjects: 0.476300 ms CreateObjectMapping: 0.158000 ms MarkObjects: 2.912100 ms  DeleteObjects: 0.206000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 34.848951 seconds.
+  path: Assets/Sprite/Card 4.mat
+  artifactKey: Guid(ecffab9c786df4f139c52e7c1699f046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprite/Card 4.mat using Guid(ecffab9c786df4f139c52e7c1699f046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cd0a260d615391ae4566f978406ac89') in 0.085221 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.894283 seconds.
+  path: Assets/Script/UImanager.cs
+  artifactKey: Guid(d828c425f6f1b4276ad48edfe142d304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/UImanager.cs using Guid(d828c425f6f1b4276ad48edfe142d304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21d39c881749cfa3f57dd9be2233ad7c') in 0.018480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 206.765348 seconds.
+  path: Assets/Script/UImanager.cs
+  artifactKey: Guid(d828c425f6f1b4276ad48edfe142d304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/UImanager.cs using Guid(d828c425f6f1b4276ad48edfe142d304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57d316aada93699dd722e37a28578efd') in 0.003517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.283145 seconds.
+  path: Assets/Script/UImanager.cs
+  artifactKey: Guid(d828c425f6f1b4276ad48edfe142d304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/UImanager.cs using Guid(d828c425f6f1b4276ad48edfe142d304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e7691c82924d624e3c2fda1fdafa624') in 0.003115 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.014040 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.190 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1191ms)
+		BeginReloadAssembly (165ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (900ms)
+			LoadAssemblies (139ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (249ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (409ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (108ms)
+				ProcessInitializeOnLoadAttributes (221ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
+				AfterProcessingInitializeOnLoad (17ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.05 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4097 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (189.8 KB). Loaded Objects now: 4630.
+Memory consumption went from 168.8 MB to 168.6 MB.
+Total: 3.575000 ms (FindLiveObjects: 0.456600 ms CreateObjectMapping: 0.131600 ms MarkObjects: 2.812200 ms  DeleteObjects: 0.172800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 66.593313 seconds.
+  path: Assets/Prefab/Prefab/Banana.prefab
+  artifactKey: Guid(91393bd8b0ff78e4ebb39724f7b36ba4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Banana.prefab using Guid(91393bd8b0ff78e4ebb39724f7b36ba4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd04c97ceb92cc919ecf5e712ae0395') in 0.100379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Prefab/Prefab/Tree.prefab
+  artifactKey: Guid(f087e0b9373ec9f478a10e3d8e52bfb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Tree.prefab using Guid(f087e0b9373ec9f478a10e3d8e52bfb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b486f186a8005020f59647c41bcf403') in 0.017056 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/Prefab/Prefab/Wood.prefab
+  artifactKey: Guid(4d319b66fe1dab247a49fb537bd1ea74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Wood.prefab using Guid(4d319b66fe1dab247a49fb537bd1ea74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7365fa53dd597da96e3c192f898e3139') in 0.020322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Prefab/Prefab/Stone.prefab
+  artifactKey: Guid(78c14306b025ca0449f065006ce99314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Stone.prefab using Guid(78c14306b025ca0449f065006ce99314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ba622521fe5698d8b87c3b7c82d53d') in 0.017156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.621416 seconds.
+  path: Assets/Prefab/Prefab/Wood 1.prefab
+  artifactKey: Guid(ea597eebc28a4e5488438ed56cc0d945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Wood 1.prefab using Guid(ea597eebc28a4e5488438ed56cc0d945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6901926e378a0f2b790ccc90a2de89c7') in 0.016766 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.817326 seconds.
+  path: Assets/Prefab/Prefab/Wood 2.prefab
+  artifactKey: Guid(c9897b3da5ffcb1489d59c37cc58c638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Wood 2.prefab using Guid(c9897b3da5ffcb1489d59c37cc58c638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f348df23581a8889a995ac2539caa618') in 0.017849 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.465325 seconds.
+  path: Assets/Prefab/Prefab/Wood 3.prefab
+  artifactKey: Guid(9c295f9a9c8e8dc4cb51766a7742547d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Wood 3.prefab using Guid(9c295f9a9c8e8dc4cb51766a7742547d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2297ef7aebe0f1ce65bf4657b80f1be8') in 0.015946 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.332573 seconds.
+  path: Assets/Prefab/Prefab/Wood 4.prefab
+  artifactKey: Guid(49f5c7f7c8e3234418a9d50b2c5e467b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Wood 4.prefab using Guid(49f5c7f7c8e3234418a9d50b2c5e467b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15833d71eeffda236a5cf7986da8824a') in 0.019110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.356405 seconds.
+  path: Assets/Prefab/Prefab/Wood 5.prefab
+  artifactKey: Guid(56efe3c0348f5484e97a59757c08a75d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Prefab/Wood 5.prefab using Guid(56efe3c0348f5484e97a59757c08a75d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '190d753bbb5747fbd0e0ccad1bda1fe8') in 0.016948 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.015744 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ajffj\Desktop\CardWorld\GameProject\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.321 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1322ms)
+		BeginReloadAssembly (188ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (991ms)
+			LoadAssemblies (152ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (275ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (452ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (113ms)
+				ProcessInitializeOnLoadAttributes (251ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
+				AfterProcessingInitializeOnLoad (18ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (22ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.90 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4097 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (189.9 KB). Loaded Objects now: 4633.
+Memory consumption went from 168.9 MB to 168.7 MB.
+Total: 3.847500 ms (FindLiveObjects: 0.461100 ms CreateObjectMapping: 0.156900 ms MarkObjects: 3.040200 ms  DeleteObjects: 0.187900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 195.845034 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_cloud_LP.png
+  artifactKey: Guid(cb0bec9d4f3f6154da9041970762e81c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_cloud_LP.png using Guid(cb0bec9d4f3f6154da9041970762e81c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ef113e0a6a9731d4348943d830a3ce5') in 0.161036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_corn-plant_LP.png
+  artifactKey: Guid(8907f037654b75645b0161c8b1d21e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_corn-plant_LP.png using Guid(8907f037654b75645b0161c8b1d21e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42cba11807fdee57414a0d0dfb49e431') in 0.091366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_cotton-plant_LP.png
+  artifactKey: Guid(529e61bfe78941546b47f68d430addb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_cotton-plant_LP.png using Guid(529e61bfe78941546b47f68d430addb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48c30c184fbb543774385d767d443be2') in 0.087181 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_cloverleaf_LP.png
+  artifactKey: Guid(49142c4c43e7c314bb1d5e78ec258c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_cloverleaf_LP.png using Guid(49142c4c43e7c314bb1d5e78ec258c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6a78e9b5c3b0d20f21f0d2dae75c0bc') in 0.095947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_lotus-leaf_LP.png
+  artifactKey: Guid(68f5a0ca3cc66f345841611333793d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_lotus-leaf_LP.png using Guid(68f5a0ca3cc66f345841611333793d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7ed04939ce760fd1e453652c5bfdf27') in 0.082162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_corals_LP.png
+  artifactKey: Guid(8ed0849bc7f53bc4cb8145ec6c27ba3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Nature/icon_corals_LP.png using Guid(8ed0849bc7f53bc4cb8145ec6c27ba3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f0c270327793c43a8f2064fa6c2f512') in 0.081984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.206569 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_city_LP.png
+  artifactKey: Guid(069eb60f849791547ab7585ba49561d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_city_LP.png using Guid(069eb60f849791547ab7585ba49561d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f78192c4296458d325f695b8484bab3') in 0.084414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_farm-silo_LP.png
+  artifactKey: Guid(0caecb1e79df9c442a663f03840e0825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_farm-silo_LP.png using Guid(0caecb1e79df9c442a663f03840e0825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1744539e503d8b66b76ee3a6f7089e8') in 0.078481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_island_LP.png
+  artifactKey: Guid(e00bd7f7a3202a24e8ba78e14cc8b96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_island_LP.png using Guid(e00bd7f7a3202a24e8ba78e14cc8b96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a12b68c8a108cf23d0c3bba64bf4ca7d') in 0.090451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_farm-house_LP.png
+  artifactKey: Guid(7cc46b271d43ebd4db0fb781d5f09bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_farm-house_LP.png using Guid(7cc46b271d43ebd4db0fb781d5f09bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '327de992fb3c9f21d455adca077e7f74') in 0.089644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_shed-dog_LP.png
+  artifactKey: Guid(460a931268f47ee4b959ba3f82a9af91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_shed-dog_LP.png using Guid(460a931268f47ee4b959ba3f82a9af91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5fa98b94d745db916a62f22a9da9caf') in 0.082997 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_mail-box_LP.png
+  artifactKey: Guid(958b3ba407c0b464387a5720ed496e8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Places/icon_mail-box_LP.png using Guid(958b3ba407c0b464387a5720ed496e8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f34131df17eaacb19f416339ef28f28') in 0.076823 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.253559 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_bench-wood_LP.png
+  artifactKey: Guid(c22f220a7d84884469ac4923579c9564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_bench-wood_LP.png using Guid(c22f220a7d84884469ac4923579c9564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfacf1e72387c03b525b3d0ed0251466') in 0.083637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_table-wood_LP.png
+  artifactKey: Guid(33514fbd8171e3244a1d7878f3e87a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_table-wood_LP.png using Guid(33514fbd8171e3244a1d7878f3e87a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a740922c74c0c52e856909db9136f6c9') in 0.093368 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_kettle_LP.png
+  artifactKey: Guid(c323e7cd6bc2bb244b1f3a0f8dd97bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_kettle_LP.png using Guid(c323e7cd6bc2bb244b1f3a0f8dd97bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b36f9bd725cabc4662beba49b9bb15c0') in 0.096133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_door-wood_LP.png
+  artifactKey: Guid(d33a0138a8259aa418562b37ac5cac61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_door-wood_LP.png using Guid(d33a0138a8259aa418562b37ac5cac61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '286315eb4bb210b3c35bc17d02685236') in 0.079893 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_lock-gold-open_LP.png
+  artifactKey: Guid(5caa72cc5da743346b324027c5c22488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_lock-gold-open_LP.png using Guid(5caa72cc5da743346b324027c5c22488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33bc0eaffde4a23ef7d1c91f1ff40caf') in 0.084075 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_hat-pirate_LP.png
+  artifactKey: Guid(aa9c4b35b101b424ab80fde222e8f600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_hat-pirate_LP.png using Guid(aa9c4b35b101b424ab80fde222e8f600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7235eaa14607ccf904e72115b2f3325') in 0.072723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_broom_LP.png
+  artifactKey: Guid(0b06ddc14156c06488297ccd866f8c63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_broom_LP.png using Guid(0b06ddc14156c06488297ccd866f8c63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92e0181e55e113736bbed5bfead4e259') in 0.099753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_gravestone_LP.png
+  artifactKey: Guid(e0add628f2109f24babe475cf45a0a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_gravestone_LP.png using Guid(e0add628f2109f24babe475cf45a0a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e4ebb00b411c11d706748835d13895') in 0.097025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Electronics/icon_computer-monitor_LP.png
+  artifactKey: Guid(264e7301837da5441a9aaf494b1ea253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Electronics/icon_computer-monitor_LP.png using Guid(264e7301837da5441a9aaf494b1ea253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45f4740150199099bd1707cae3adb02f') in 0.078286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_chest-closed_LP.png
+  artifactKey: Guid(95dedb0bde3de9f44a20994bad5038aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Fantasy/icon_chest-closed_LP.png using Guid(95dedb0bde3de9f44a20994bad5038aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b838044f3c7cc92a72a63e315aa8de3') in 0.091237 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.481531 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Drinks/icon_vodka-bottle_LP.png
+  artifactKey: Guid(ab955de1fa3f2b245bd2ca2472e7b811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Drinks/icon_vodka-bottle_LP.png using Guid(ab955de1fa3f2b245bd2ca2472e7b811) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a7f91015265ab3bce0da89387eedf5f') in 0.110680 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.594738 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Common/icon_gem-green_LP.png
+  artifactKey: Guid(5ff1879e57211ee43a51cdbc89403c6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Common/icon_gem-green_LP.png using Guid(5ff1879e57211ee43a51cdbc89403c6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ad92ffa4d1a4076cf64cc414be446c') in 0.085661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Common/icon_message-open_LP.png
+  artifactKey: Guid(400342fd75cb5954c8603ef18fcf2435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Common/icon_message-open_LP.png using Guid(400342fd75cb5954c8603ef18fcf2435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e1fd5447bd4af83d6f1a00579be4a02') in 0.090106 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Common/icon_ui-checkmark-green_LP.png
+  artifactKey: Guid(e74e4e44272a9c644b6c035d5f1362d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Common/icon_ui-checkmark-green_LP.png using Guid(e74e4e44272a9c644b6c035d5f1362d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55d9641744e4daef2f724211589890ef') in 0.073319 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.820289 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coins/icon_coin-crown-bronze_LP.png
+  artifactKey: Guid(7cb5d483728bdef43afcc875b7ee0235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coins/icon_coin-crown-bronze_LP.png using Guid(7cb5d483728bdef43afcc875b7ee0235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21d3cbb92216f3ed7aefc9ae410d913b') in 0.149148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coins/icon_coin-star-bronze_LP.png
+  artifactKey: Guid(80073fbbf24ada740bee5d3798dc321e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coins/icon_coin-star-bronze_LP.png using Guid(80073fbbf24ada740bee5d3798dc321e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88a18f564ad31a6debd21947ca3fa12d') in 0.105333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coins/icon_star-gold_LP.png
+  artifactKey: Guid(0efc8b8255526cb4e97f6ead398247ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coins/icon_star-gold_LP.png using Guid(0efc8b8255526cb4e97f6ead398247ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54ca50b6200c0e680d47126586b3f04f') in 0.075449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.403650 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coffee/icon_coffee-beans_LP.png
+  artifactKey: Guid(b079047e03b72134b86c11b8080e7dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coffee/icon_coffee-beans_LP.png using Guid(b079047e03b72134b86c11b8080e7dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '747ec15d1237e5b8ff880a4a6856bc1a') in 0.088813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coffee/icon_cookie-bite_LP.png
+  artifactKey: Guid(e299daf6cbdc0da4fa81f30fc628d6ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coffee/icon_cookie-bite_LP.png using Guid(e299daf6cbdc0da4fa81f30fc628d6ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3115033affe91cee8dc32165e888e45') in 0.081249 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coffee/icon_coffee-cup_LP.png
+  artifactKey: Guid(8e200a40ec3c70148a147f87c796390d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Coffee/icon_coffee-cup_LP.png using Guid(8e200a40ec3c70148a147f87c796390d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e37691b7921d690de3245f9e5072aaa') in 0.069467 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.611966 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Clothes/icon_ring-gold_LP.png
+  artifactKey: Guid(680f8a5e29f9f234e9dba8d4454b6ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Clothes/icon_ring-gold_LP.png using Guid(680f8a5e29f9f234e9dba8d4454b6ef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed0aa540f16afe79121b9fece8a9c797') in 0.084994 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Clothes/icon_ring-wood_LP.png
+  artifactKey: Guid(60156cf9cd9d8f948ba98ec16241e0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Clothes/icon_ring-wood_LP.png using Guid(60156cf9cd9d8f948ba98ec16241e0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '298038601879aa734254a08815a49944') in 0.067518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.534255 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Barrels/icon_barrel-orange-emtpy_LP.png
+  artifactKey: Guid(02edccb0232af9a46ae67a6ead458900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Barrels/icon_barrel-orange-emtpy_LP.png using Guid(02edccb0232af9a46ae67a6ead458900) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7fb8f331d85b56191063c5d4deff4a5') in 0.101315 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.383974 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_businesswoman-head_LP.png
+  artifactKey: Guid(3831d7272aa45a04596a7f4642e6684f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_businesswoman-head_LP.png using Guid(3831d7272aa45a04596a7f4642e6684f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23e027bcdf3c27cd55c3d5fb11c0e04f') in 0.084712 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_pilot-head_LP.png
+  artifactKey: Guid(ed0995a6baf21d34694c50f816d539f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_pilot-head_LP.png using Guid(ed0995a6baf21d34694c50f816d539f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd324dd860a6fd3bfa6054464d467098a') in 0.095000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_yeti-head_LP.png
+  artifactKey: Guid(a5f6ef76cb116b64aa56c8e55d5b7644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_yeti-head_LP.png using Guid(a5f6ef76cb116b64aa56c8e55d5b7644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbb3708659a806016d456ddfd652fe87') in 0.080694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_swat-officer-head_LP.png
+  artifactKey: Guid(b0bff830f7e230e459670a0896b7f404) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_swat-officer-head_LP.png using Guid(b0bff830f7e230e459670a0896b7f404) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1a70aa4ef0e2db790dc7df3d38c3ff4') in 0.083332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_soldier-ge-head_LP.png
+  artifactKey: Guid(7901faec99b09344e941432395d4e4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_soldier-ge-head_LP.png using Guid(7901faec99b09344e941432395d4e4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbfb8bf1c50f5ba92bc2f08d18c036c2') in 0.088727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animations/icon_animation-jump_LP.png
+  artifactKey: Guid(8307abf1065fc1740bed5afa240a6f55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animations/icon_animation-jump_LP.png using Guid(8307abf1065fc1740bed5afa240a6f55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8c16be08ddd39b6a327c43becf3c94') in 0.079035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_mummy-head_LP.png
+  artifactKey: Guid(f425b28437be78a409c16a24565a757b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_mummy-head_LP.png using Guid(f425b28437be78a409c16a24565a757b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bfc03661db8c022a50bd5e002de7f0c') in 0.090368 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_reporter-man-head_LP.png
+  artifactKey: Guid(88fad52c3ca6e924cb66cb1d8990ef42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Avatars/icon_reporter-man-head_LP.png using Guid(88fad52c3ca6e924cb66cb1d8990ef42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cd08f25d71a2835b6afe4506ee2a9bc') in 0.075214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.231305 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_boar_LP.png
+  artifactKey: Guid(6e608b5477e81d14d922b5f27f8b35f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_boar_LP.png using Guid(6e608b5477e81d14d922b5f27f8b35f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14d9d6a361d9ca3b36dba726031ed59f') in 0.095804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_snake_LP.png
+  artifactKey: Guid(182622f9b40923845af46f3bcb453660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_snake_LP.png using Guid(182622f9b40923845af46f3bcb453660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e3847f3026e1373871b95f0d6dec7f8') in 0.099405 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_cow_LP.png
+  artifactKey: Guid(d92e17c0b7baa0c49abb2c689447a8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_cow_LP.png using Guid(d92e17c0b7baa0c49abb2c689447a8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5596d2009f57d870573860208b96b611') in 0.081464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_lion_LP.png
+  artifactKey: Guid(52e14a0147eae8e4796a9a3700668b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_lion_LP.png using Guid(52e14a0147eae8e4796a9a3700668b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcf873fa83307d3a6b6d07e814646db0') in 0.089266 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_fish_LP.png
+  artifactKey: Guid(8ec7bdfedd1da004aa9748cdf4d2491d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_fish_LP.png using Guid(8ec7bdfedd1da004aa9748cdf4d2491d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0da3f67d650db75a1eccda6cbd322be2') in 0.083278 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_pigeon_LP.png
+  artifactKey: Guid(f5bb05a1c581979488bcfd7cb56ede75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_pigeon_LP.png using Guid(f5bb05a1c581979488bcfd7cb56ede75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb55e129be6a14f93c5a26891a7b55af') in 0.079777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_deer_LP.png
+  artifactKey: Guid(1f6903fa4acd9e149a7cf8c151c6a2ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Animals/icon_deer_LP.png using Guid(1f6903fa4acd9e149a7cf8c151c6a2ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d311bdde272a970d44e59bad1e4bb1d') in 0.079822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.599458 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Sport/icon_football-ball_LP.png
+  artifactKey: Guid(9671a4cdea636fc4ab59be88a1f9626f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Sport/icon_football-ball_LP.png using Guid(9671a4cdea636fc4ab59be88a1f9626f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac69337e7c91caa95af83abf3fcd271c') in 0.082735 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Sport/icon_tennis-racket_LP.png
+  artifactKey: Guid(8a419103cf875ff49beb284f626a7e00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Sport/icon_tennis-racket_LP.png using Guid(8a419103cf875ff49beb284f626a7e00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '730d505f9646d9ca51217a4fa3baa62a') in 0.088030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Sport/icon_windsurf_LP.png
+  artifactKey: Guid(63321d1a10d2afe4995fe689bdf1c735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Sport/icon_windsurf_LP.png using Guid(63321d1a10d2afe4995fe689bdf1c735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee616cb8f43dbf0b40f8a94f8f1cc7d4') in 0.064567 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.304205 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_battery_LP.png
+  artifactKey: Guid(f0cc47c684f4b6542817f28ecddd6f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_battery_LP.png using Guid(f0cc47c684f4b6542817f28ecddd6f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5988af5b1e2fcfc1ba16fb59db4694de') in 0.091302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_mask-swimming_LP.png
+  artifactKey: Guid(75ce97069de421d47a729424bd8418a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_mask-swimming_LP.png using Guid(75ce97069de421d47a729424bd8418a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e78a6eb578d5c66fd9616f383d5d4b95') in 0.082044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_fireplace_LP.png
+  artifactKey: Guid(f4f41190f7a74cf4eace495c77494c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_fireplace_LP.png using Guid(f4f41190f7a74cf4eace495c77494c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '775285199052feaa032d8e6ef21fe397') in 0.084925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_ladder-wood_LP.png
+  artifactKey: Guid(d81df98a12e03e94382a925a5d402dd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_ladder-wood_LP.png using Guid(d81df98a12e03e94382a925a5d402dd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf59f8fe3b223c9b72b9e6f3526ab954') in 0.087019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_stretcher_LP.png
+  artifactKey: Guid(c59682aba07cab443927cfa879c6a68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_stretcher_LP.png using Guid(c59682aba07cab443927cfa879c6a68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d8eaab5c33ff767c4d7d083fe39d42d') in 0.089446 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_duct-tape_LP.png
+  artifactKey: Guid(741ffde1d78abe644b4dc16261fca43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Survival/icon_duct-tape_LP.png using Guid(741ffde1d78abe644b4dc16261fca43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd57ee118d188655d5893a29e0ee5990e') in 0.088668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Tools/icon_lantern_LP.png
+  artifactKey: Guid(a5ab51ab50797c94c8716a11f8314696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Tools/icon_lantern_LP.png using Guid(a5ab51ab50797c94c8716a11f8314696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed0397ac645ade0c5d4f93b7e9debc65') in 0.085046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Tools/icon_pocket-watch_LP.png
+  artifactKey: Guid(7601c67de297220449fa0e12a6049cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Tools/icon_pocket-watch_LP.png using Guid(7601c67de297220449fa0e12a6049cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd6b444ff53171c90240a8132429869c') in 0.093545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.173521 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Vehicles/icon_engine_LP.png
+  artifactKey: Guid(835d02bdf4e7cb449bffd5c8c0c9d5a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Vehicles/icon_engine_LP.png using Guid(835d02bdf4e7cb449bffd5c8c0c9d5a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '472e9ffbd57e5fcafb1c11f434290534') in 0.096585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Vehicles/icon_tire_LP.png
+  artifactKey: Guid(78ab55980226d884c84738ee53a30bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/Vehicles/icon_tire_LP.png using Guid(78ab55980226d884c84738ee53a30bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32073fa77d747c85540d488553dfc0fd') in 0.094667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.159243 seconds.
+  path: Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/War/icon_tank-sherman_LP.png
+  artifactKey: Guid(df898d976f668434d9ee74524f56899c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/polyperfect/Low Poly Icon Pack/Images/_Icons/War/icon_tank-sherman_LP.png using Guid(df898d976f668434d9ee74524f56899c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '340948c2359b7b8ee10bf3a3a7df3c8c') in 0.088421 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
