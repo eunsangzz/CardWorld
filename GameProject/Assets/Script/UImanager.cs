@@ -22,6 +22,8 @@ public class UImanager : MonoBehaviour
     public GameObject bananaTreeBtn;
 
     public GameObject tutoInfoUi;
+    public GameObject tutoDayUi;
+    public GameObject tutoBtnUi;
     public GameObject tutoBuy;
     public TextMeshProUGUI tutoBuyText;
     public GameObject tutoSell;
@@ -38,6 +40,7 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI IronCountText;
 
     public TextMeshProUGUI GoldText;
+    public TextMeshProUGUI FoodCount;
 
     public TextMeshProUGUI CardInfoText;
     public TextMeshProUGUI CardNameText;
@@ -72,7 +75,7 @@ public class UImanager : MonoBehaviour
 
         if (slTimer.value > 0.0f && DataController.instance.gameData.endDay == false && feed == false) //�ð��� �带��
         {
-            slTimer.value -= 20 * Time.deltaTime;
+            slTimer.value -= 0.8f * Time.deltaTime;
             feedplayer = 0;
             DataController.instance.gameData.PlayerCount = DataController.instance.gameData.PlayerCount - notfeedplayer;
             notfeedplayer = 0;
@@ -107,6 +110,7 @@ public class UImanager : MonoBehaviour
                 tutoday = true;
                 Time.timeScale = 0;
                 tutoInfoUi.SetActive(true);
+                tutoDayUi.SetActive(true);
                 tutoDay.SetActive(true);
             }
             if (DataController.instance.gameData.PlayerCount != 0)
@@ -228,6 +232,7 @@ public class UImanager : MonoBehaviour
         if(DataController.instance.gameData.tuto == true && tutocraft == false)
         {
             tutoInfoUi.SetActive(true);
+            tutoBtnUi.SetActive(true);
             tutoCraft.SetActive(true);
             Time.timeScale =0;
             tutocraft = true;
@@ -271,32 +276,44 @@ public class UImanager : MonoBehaviour
                     if (touch.name == "Wood(Clone)")
                     {
                         cardInfoUi.SetActive(true);
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Wood";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "woodinfo";
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "목재";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "가장 기본재료 나무를 벌목해 얻는다. 여러가지 제작품에 재료로 사용가능하다.";
                     }
                     else if (touch.name == "Stone(Clone)")
                     {
                         cardInfoUi.SetActive(true);
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Stone";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "stoneinfo";
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "석재";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "가장 기본재료 암석을 채광해 얻는다. 여러가지 제작품에 재료로 사용가능하다. ";
                     }
                     else if (touch.name == "Tree(Clone)")
                     {
                         cardInfoUi.SetActive(true);
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Tree";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "treeinfo";
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "나무";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "벌목하면 목재를 얻을 수 있다. 지금은 아무것도 아니지";
                     }
                     else if (touch.name == "Rock(Clone)")
                     {
                         cardInfoUi.SetActive(true);
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "Rock";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "rockinfo";
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "암석";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "채광하면 석재를 얻을 수 있다. 지금은 너무 무겁지";
                     }
                     else if (touch.name == "House(Clone)")
                     {
                         cardInfoUi.SetActive(true);
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "House";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "houseinfo";
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "집";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "카드의 한도를 늘려준다. 플레이어의 수를 늘릴수있다.";
+                    }
+                    else if (touch.name == "Banana(Clone)")
+                    {
+                        cardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "바나나";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "기본음식 그냥도 먹을 수 있지만 요리해서 먹으면 더욱 배부르다.";
+                    }
+                    else if (touch.name == "BananaTree(Clone)")
+                    {
+                        cardInfoUi.SetActive(true);
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "집";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "채집과 벌목을 하면 바나나와 목재를 얻을수있다.";
                     }
                 }
             }
@@ -314,6 +331,8 @@ public class UImanager : MonoBehaviour
                 tutoCraft.SetActive(false);
                 tutoSell.SetActive(false);
                 tutoDay.SetActive(false);
+                tutoDayUi.SetActive(false);
+                tutoBtnUi.SetActive(false);
                 Time.timeScale =1;
             }
         }
@@ -380,16 +399,17 @@ public class UImanager : MonoBehaviour
 
     private void LateUpdate()
     {
-        WoodCountText.GetComponent<TextMeshProUGUI>().text = "Wood : " + DataController.instance.gameData.WoodCard;
-        StoneCountText.GetComponent<TextMeshProUGUI>().text = "Stone : " + DataController.instance.gameData.StoneCard;
-        GoldText.GetComponent<TextMeshProUGUI>().text = "Gold : " + DataController.instance.gameData.gold;
-        CardCountText.GetComponent<TextMeshProUGUI>().text = "CardCount : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
-        DayText.GetComponent<TextMeshProUGUI>().text = "Day : " + DataController.instance.gameData.Day;
+        WoodCountText.GetComponent<TextMeshProUGUI>().text = "목재 : " + DataController.instance.gameData.WoodCard;
+        StoneCountText.GetComponent<TextMeshProUGUI>().text = "석제 : " + DataController.instance.gameData.StoneCard;
+        GoldText.GetComponent<TextMeshProUGUI>().text = "골드 : " + DataController.instance.gameData.gold;
+        CardCountText.GetComponent<TextMeshProUGUI>().text = "카드제한 : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
+        DayText.GetComponent<TextMeshProUGUI>().text = "생존일 : " + DataController.instance.gameData.Day;
+        FoodCount.GetComponent<TextMeshProUGUI>().text = "음식 : " + DataController.instance.gameData.FoodCount + "/" + (DataController.instance.gameData.PlayerCount * 3);
 
-        tutoBuyText.GetComponent<TextMeshProUGUI>().text = "You have 3 coin can buy Card \n if upgrade store ";
-        tutoCraftText.GetComponent<TextMeshProUGUI>().text = "";
-        tutoDayText.GetComponent<TextMeshProUGUI>().text = "";
-        tutoSellText.GetComponent<TextMeshProUGUI>().text = "";
+        tutoBuyText.GetComponent<TextMeshProUGUI>().text = "3골드로 카드를 구매할수있다.";
+        tutoCraftText.GetComponent<TextMeshProUGUI>().text = "재료를 모아 제작할 수 있다.";
+        tutoDayText.GetComponent<TextMeshProUGUI>().text = "밤이 되었습니다. 제한된 카드보다 소유한 카드가 많다면 카드를 팔아야합니다. /n 또한 하루가 지날떄마다 주민에게 음식을 줘야합니다./n 음식이 부족하면 주민이 굶어 죽습니다.";
+        tutoSellText.GetComponent<TextMeshProUGUI>().text = "카드를 팔 수 있습니다. 화면 위쪽 판매가 횔성화 되어있는지 확인할수있습니다. 조심하세요 카드를 누르면 판매됩니다.";
     }
 
     public void MainSecne()

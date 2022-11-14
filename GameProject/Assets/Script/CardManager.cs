@@ -12,6 +12,7 @@ public class CardManager : MonoBehaviour
     public GameObject tutoSell;
     public GameObject tutoBuy;
     public GameObject tutoUi;
+    public GameObject tutoBtnUi;
 
     bool tutobuy;
     bool tutosell;
@@ -22,10 +23,7 @@ public class CardManager : MonoBehaviour
     {
         tutobuy = false;
         tutosell = false;
-        for (int i = 0; i < 2; i++)
-        {
-            GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
-        }
+        GameObject _Card = Instantiate(PlayerCard, new Vector3(3, 3, 0), Quaternion.identity);
     }
 
     private void Update()
@@ -39,6 +37,7 @@ public class CardManager : MonoBehaviour
         {
             Time.timeScale =0;
             tutoUi.SetActive(true);
+            tutoBtnUi.SetActive(true);
             tutoBuy.SetActive(true);
             tutobuy = true; 
         }
@@ -96,6 +95,7 @@ public class CardManager : MonoBehaviour
         {
             Time.timeScale =0;
             tutoUi.SetActive(true);
+            tutoBtnUi.SetActive(true);
             tutoSell.SetActive(true);
             tutosell = true;
         }
@@ -164,6 +164,11 @@ public class CardManager : MonoBehaviour
                     {
                         DataController.instance.gameData.gold += 3;
                         DataController.instance.gameData.HouseCard -= 1;
+                    }
+                    if(touch.name == "Player(Clone)")
+                    {
+                        DataController.instance.gameData.gold += 5;
+                        DataController.instance.gameData.PlayerCount -= 1;
                     }
                 }
             }
