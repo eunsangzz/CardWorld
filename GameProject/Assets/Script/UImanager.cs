@@ -312,8 +312,8 @@ public class UImanager : MonoBehaviour
                     else if (touch.name == "BananaTree(Clone)")
                     {
                         cardInfoUi.SetActive(true);
-                        CardNameText.GetComponent<TextMeshProUGUI>().text = "집";
-                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "채집과 벌목을 하면 바나나와 목재를 얻을수있다.";
+                        CardNameText.GetComponent<TextMeshProUGUI>().text = "바나나나무";
+                        CardInfoText.GetComponent<TextMeshProUGUI>().text = "채집을 하면 바나나와 목재를 얻을수있다.";
                     }
                 }
             }
