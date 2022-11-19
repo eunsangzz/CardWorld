@@ -1945,6 +1945,15 @@ MonoBehaviour:
   treeSkillBtn: {fileID: 79309860}
   rockSkillBtn: {fileID: 322177017}
   bananaTreeBtn: {fileID: 2096842479}
+  tutoInfoUi: {fileID: 0}
+  tutoBuy: {fileID: 0}
+  tutoBuyText: {fileID: 0}
+  tutoSell: {fileID: 0}
+  tutoSellText: {fileID: 0}
+  tutoCraft: {fileID: 0}
+  tutoCraftText: {fileID: 0}
+  tutoDay: {fileID: 0}
+  tutoDayText: {fileID: 0}
   WoodCountText: {fileID: 92508497}
   StoneCountText: {fileID: 2052160691}
   IronCountText: {fileID: 188094628}
@@ -1979,15 +1988,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf034e9e839c487ab87463936082900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCard: {fileID: 2683548558265663452, guid: 344864104d1394ef1a30b6a56f64e1ca, type: 3}
+  PlayerCard: {fileID: 2683548558265663452, guid: 56efe3c0348f5484e97a59757c08a75d, type: 3}
   BasicCardSet:
-  - {fileID: 2683548558265663452, guid: d5761f25dac704faf82d39bf26b12b00, type: 3}
-  - {fileID: 2683548558265663452, guid: 680742dc362d649fab21ac903bf985d6, type: 3}
-  - {fileID: 2683548558265663452, guid: 6483c165fde3b4ec1911c996813f2e8d, type: 3}
-  - {fileID: 2683548558265663452, guid: aba2f8c34a7684b7aa586e9ec14dea3f, type: 3}
-  - {fileID: 2683548558265663452, guid: 823b3337399094143906f93c113828a8, type: 3}
-  - {fileID: 2683548558265663452, guid: 7b63a183166504ba19c0762f6565f066, type: 3}
+  - {fileID: 2683548558265663452, guid: 4d319b66fe1dab247a49fb537bd1ea74, type: 3}
+  - {fileID: 2683548558265663452, guid: c9897b3da5ffcb1489d59c37cc58c638, type: 3}
+  - {fileID: 2683548558265663452, guid: ea597eebc28a4e5488438ed56cc0d945, type: 3}
+  - {fileID: 2683548558265663452, guid: 9c295f9a9c8e8dc4cb51766a7742547d, type: 3}
+  - {fileID: 2683548558265663452, guid: bcc1ddfe1177875469aab586280ba79c, type: 3}
+  - {fileID: 2683548558265663452, guid: ad65cc421b721954bbe142e39bf50e07, type: 3}
   SellUI: {fileID: 413550840}
+  tutoSell: {fileID: 0}
+  tutoBuy: {fileID: 0}
+  tutoUi: {fileID: 0}
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
