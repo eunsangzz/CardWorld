@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class UImanager : MonoBehaviour
 {
     public GameObject craftUi;
+    public GameObject craftListUi;
     public GameObject craftUiBtn;
     public GameObject menuUi;
     public GameObject menuUiBtn;
@@ -32,12 +33,17 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI tutoCraftText;
     public GameObject tutoDay;
     public TextMeshProUGUI tutoDayText;
+    public GameObject tutoStoreUp;
+    public TextMeshProUGUI tutoStoreUpText;
     bool tutoday;
     bool tutocraft;
+    bool StoreUp;
 
     public TextMeshProUGUI WoodCountText;
     public TextMeshProUGUI StoneCountText;
     public TextMeshProUGUI IronCountText;
+    public TextMeshProUGUI PanelCountText;
+    public TextMeshProUGUI BrickCountText;
 
     public TextMeshProUGUI GoldText;
     public TextMeshProUGUI FoodCount;
@@ -47,6 +53,7 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI CardCountText;
     public TextMeshProUGUI CardOver;
     public TextMeshProUGUI DayText;
+    public TextMeshProUGUI StoreUpText;
 
     public Slider slTimer;
     float fSliderBarTime;
@@ -238,6 +245,7 @@ public class UImanager : MonoBehaviour
             tutocraft = true;
         }
         craftUi.SetActive(true);
+        craftListUi.SetActive(true);
         craftUiBtn.SetActive(false);
         buyBtn.SetActive(false);
         craftUiBtn.SetActive(false);
@@ -382,19 +390,19 @@ public class UImanager : MonoBehaviour
 
     public void StoreUpgrade()
     {
+        if(DataController.instance.gameData.tuto == true && StoreUp == false)
+        {
+            tutoInfoUi.SetActive(true);
+            tutoBtnUi.SetActive(true);
+            tutoStoreUp.SetActive(true);
+            Time.timeScale =0;
+            StoreUp = true;
+        }
         if (DataController.instance.gameData.gold >= 100 && DataController.instance.gameData.storeUpgrade == 0)
         {
             DataController.instance.gameData.storeUpgrade += 1;
+            DataController.instance.gameData.gold -= 100;
         }
-        if (DataController.instance.gameData.gold >= 300 && DataController.instance.gameData.storeUpgrade == 1)
-        {
-            DataController.instance.gameData.storeUpgrade += 1;
-        }
-        if (DataController.instance.gameData.gold >= 500 && DataController.instance.gameData.storeUpgrade == 2)
-        {
-            DataController.instance.gameData.storeUpgrade += 1;
-        }
-
     }
 
     private void LateUpdate()
@@ -405,11 +413,13 @@ public class UImanager : MonoBehaviour
         CardCountText.GetComponent<TextMeshProUGUI>().text = "카드제한 : " + DataController.instance.gameData.CardLimit + "/" + DataController.instance.gameData.CardCount;
         DayText.GetComponent<TextMeshProUGUI>().text = "생존일 : " + DataController.instance.gameData.Day;
         FoodCount.GetComponent<TextMeshProUGUI>().text = "음식 : " + DataController.instance.gameData.FoodCount + "/" + (DataController.instance.gameData.PlayerCount * 3);
+        StoreUpText.GetComponent<TextMeshProUGUI>().text = "상점 레벨 : " + DataController.instance.gameData.storeUpgrade;
 
         tutoBuyText.GetComponent<TextMeshProUGUI>().text = "3골드로 카드를 구매할수있다.";
         tutoCraftText.GetComponent<TextMeshProUGUI>().text = "재료를 모아 제작할 수 있다.";
         tutoDayText.GetComponent<TextMeshProUGUI>().text = "밤이 되었습니다. 제한된 카드보다 소유한 카드가 많다면 카드를 팔아야합니다. /n 또한 하루가 지날떄마다 주민에게 음식을 줘야합니다./n 음식이 부족하면 주민이 굶어 죽습니다.";
         tutoSellText.GetComponent<TextMeshProUGUI>().text = "카드를 팔 수 있습니다. 화면 위쪽 판매가 횔성화 되어있는지 확인할수있습니다. 조심하세요 카드를 누르면 판매됩니다.";
+        tutoStoreUpText.GetComponent<TextMeshProUGUI>().text = "100골드로 상점을 업그레이드 할수있습니다. 새로운 재료가 나와요!";
     }
 
     public void MainSecne()

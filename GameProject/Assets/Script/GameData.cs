@@ -11,14 +11,21 @@ public class GameData
 {
     public int WoodCard;
     public int StoneCard;
-    public int IronCard;
-    public int GoldCard;
+    public int IronCard;//
+    public int GoldCard;//
     public int TreeCard;
     public int BananaTreeCard;
     public int BananaCard;
     public int HouseCard;
+    public int ForgeCard;
+    public int TimberCard;
+    public int MineCard;
     public int gold;
     public int RockCard;
+    public int PanelCard;//
+    public int BrickCard;//
+    public int IronIngotCard;//
+    public int GoldIngotCard;//
 
     public int CardCount;
     public int CardLimit;
