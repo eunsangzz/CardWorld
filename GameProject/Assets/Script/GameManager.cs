@@ -42,10 +42,18 @@ public class GameManager : MonoBehaviour
     {
         GameOverScene();
         DataController.instance.gameData.CardCount = (DataController.instance.gameData.WoodCard + DataController.instance.gameData.StoneCard +
-        DataController.instance.gameData.TreeCard + DataController.instance.gameData.RockCard + DataController.instance.gameData. BananaTreeCard + DataController.instance.gameData.IronCard +
-        DataController.instance.gameData.GoldCard + DataController.instance.gameData.HouseCard);
+        DataController.instance.gameData.TreeCard + DataController.instance.gameData.RockCard + DataController.instance.gameData. BananaTreeCard +
+        DataController.instance.gameData.IronCard + DataController.instance.gameData.GoldCard + DataController.instance.gameData.HouseCard +
+        DataController.instance.gameData.GoldIngotCard + DataController.instance.gameData.IronIngotCard + DataController.instance.gameData.BrickCard +
+        DataController.instance.gameData.PanelCard + DataController.instance.gameData.TimberCard+ DataController.instance.gameData.MineCard +
+        DataController.instance.gameData.ForgeCard);
 
         DataController.instance.gameData.FoodCount = DataController.instance.gameData.BananaCard;
+
+        if(DataController.instance.gameData.GoldIngotCard == 10)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
     void MainSecne()

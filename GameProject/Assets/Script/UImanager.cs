@@ -55,6 +55,8 @@ public class UImanager : MonoBehaviour
     public TextMeshProUGUI DayText;
     public TextMeshProUGUI StoreUpText;
 
+    public TextMeshProUGUI GoalText;
+
     public Slider slTimer;
     float fSliderBarTime;
 
@@ -414,6 +416,7 @@ public class UImanager : MonoBehaviour
         DayText.GetComponent<TextMeshProUGUI>().text = "생존일 : " + DataController.instance.gameData.Day;
         FoodCount.GetComponent<TextMeshProUGUI>().text = "음식 : " + DataController.instance.gameData.FoodCount + "/" + (DataController.instance.gameData.PlayerCount * 3);
         StoreUpText.GetComponent<TextMeshProUGUI>().text = "상점 레벨 : " + DataController.instance.gameData.storeUpgrade;
+        GoalText.GetComponent<TextMeshProUGUI>().text = "목표 : 금괴 10 / " + DataController.instance.gameData.GoldIngotCard; 
 
         tutoBuyText.GetComponent<TextMeshProUGUI>().text = "3골드로 카드를 구매할수있다.";
         tutoCraftText.GetComponent<TextMeshProUGUI>().text = "재료를 모아 제작할 수 있다.";
